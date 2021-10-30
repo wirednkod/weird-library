@@ -1,0 +1,67 @@
+@import "./variables.less";
+
+.notifications-component {
+  z-index: 1000000 !important;
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    transition: all 0.3s ease;
+    color: fade(@primary-inverted, 50%);
+    &:hover {
+      color: @primary-inverted;
+    }
+  }
+}
+.notifier {
+  padding: 24px;
+  width: 100%;
+  border-radius: 0px;
+  background-color: @primary-color;
+  h5 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 12px;
+    color: @primary-inverted;
+  }
+  a {
+    word-break: break-all;
+    padding-top: 16px;
+    font-size: 14px;
+  }
+  .notifierIcon {
+    padding-right: 16px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    color: @primary-inverted;
+    a {
+      font-weight: 300;
+      padding-top: 0px;
+      font-size: 12px;
+    }
+  }
+  &.success {
+    background-color: #12b258;
+    color: @primary-color;
+    p,
+    a,
+    h5 {
+      color: @primary-color;
+    }
+  }
+  &.error {
+    background-color: #f22b5a;
+    color: @primary-color;
+    p,
+    a,
+    h5 {
+      color: @primary-color;
+    }
+  }
+}

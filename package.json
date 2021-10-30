@@ -1,0 +1,61 @@
+{
+	"name": "react-components-library",
+	"version": "0.0.1",
+	"main": "./lib/cjs/index.js",
+	"module": "./lib/esm/index.js",
+	"types": "./lib/esm/index.d.ts",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.14.8",
+		"@storybook/addon-actions": "^6.4.0-alpha.20",
+		"@storybook/addon-essentials": "^6.4.0-alpha.20",
+		"@storybook/addon-links": "^6.4.0-alpha.20",
+		"@storybook/addons": "^6.4.0-alpha.20",
+		"@storybook/react": "^6.4.0-alpha.20",
+		"@storybook/theming": "^6.4.0-alpha.20",
+		"@types/bn.js": "^5.1.0",
+		"@types/react": "^17.0.14",
+		"@types/react-dom": "^17.0.9",
+		"@types/styled-components": "^5.1.11",
+		"@typescript-eslint/eslint-plugin": "^4.28.4",
+		"@typescript-eslint/parser": "^4.28.4",
+		"babel-loader": "^8.2.2",
+		"bn.js": "^5.2.0",
+		"copyfiles": "^2.4.1",
+		"eslint": "^7.31.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"prettier": "^2.3.2",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"rimraf": "^3.0.2",
+		"styled-components": "^4.4.1",
+		"tsc-watch": "^4.4.0",
+		"typescript": "^4.3.5"
+	},
+	"scripts": {
+		"tsc-watch": "tsc-watch --noClear -p ./tsconfig.json",
+		"clean": "rimraf lib/*",
+		"build": "yarn run clean && yarn build:esm && yarn build:cjs && yarn run postbuild",
+		"build:esm": "tsc",
+		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
+		"postbuild": "copyfiles ./styles/* ./lib/",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook",
+		"format": "prettier --write ."
+	},
+	"peerDependencies": {
+		"react": ">= 16.8.0",
+		"react-dom": ">= 16.8.0"
+	},
+	"files": [
+		"lib/"
+	],
+	"dependencies": {
+		"@types/bignumber.js": "^5.0.0",
+		"bignumber.js": "^9.0.1",
+		"web3-utils": "^1.5.2",
+		"cross-env": "^7.0.3",
+		"styled-components": "^4.4.1"
+	}
+}

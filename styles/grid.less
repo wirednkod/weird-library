@@ -1,0 +1,99 @@
+.container {
+  width: 1140px;
+  margin: 0px auto;
+  max-width: 100%;
+  min-height: 100%;
+  .min-height-content();
+}
+
+.flex-grid-1 {
+  .calc-grid(1, 20px);
+  &.last-flex {
+    .calc-grid(1);
+  }
+}
+.flex-grid-2 {
+  .calc-grid(2, 20px);
+  &.last-flex {
+    .calc-grid(2);
+  }
+}
+.flex-grid-3 {
+  .calc-grid(3, 20px);
+  &.last-flex {
+    .calc-grid(3);
+  }
+}
+.flex-grid-4 {
+  .calc-grid(4, 20px);
+  &.last-flex {
+    .calc-grid(4);
+  }
+}
+.flex-grid-5 {
+  .calc-grid(5, 20px);
+  &.last-flex {
+    .calc-grid(5);
+  }
+}
+.flex-grid-6 {
+  .calc-grid(6, 20px);
+  &.last-flex {
+    .calc-grid(6);
+  }
+}
+.flex-grid-7 {
+  .calc-grid(7, 20px);
+  &.last-flex {
+    .calc-grid(7);
+  }
+}
+.flex-grid-8 {
+  .calc-grid(8, 20px);
+  &.last-flex {
+    .calc-grid(8);
+  }
+}
+.flex-grid-9 {
+  .calc-grid(9, 20px);
+  &.last-flex {
+    .calc-grid(9);
+  }
+}
+.flex-grid-10 {
+  .calc-grid(10, 20px);
+  &.last-flex {
+    .calc-grid(10);
+  }
+}
+.flex-grid-11 {
+  .calc-grid(11, 20px);
+  &.last-flex {
+    .calc-grid(11);
+  }
+}
+.flex-grid-12 {
+  .calc-grid(12, 20px);
+  &.last-flex {
+    .calc-grid(12);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .container {
+    width: calc(100% - 80px);
+    margin: 0px 40px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .swapWrapper {
+    .container {
+      margin: 0px;
+      width: 100%;
+    }
+  }
+}
