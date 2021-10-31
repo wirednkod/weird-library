@@ -71,10 +71,6 @@ import { WalletConnect } from "./icons/others/WalletConnect";
 
 // Helpers
 import { truncate, evalUnits, transformToBaseUnit } from "./helpers/utils";
-import {
-  exponentTenToIncrease,
-  exponentTenToDecrease,
-} from "./helpers/bigMath";
 import sendNotification from "./helpers/notifications";
 
 export {
@@ -142,7 +138,5 @@ export {
   truncate,
   evalUnits,
   transformToBaseUnit,
-  exponentTenToIncrease,
-  exponentTenToDecrease,
   sendNotification,
 };

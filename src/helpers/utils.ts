@@ -1,4 +1,4 @@
-import { BigNumber } from "bignumber.js";
+import { BN } from "bn.js";
 
 export const truncate = (
   fullStr: string,
@@ -29,8 +29,8 @@ export enum EvalMessages {
   GENERAL_ERROR = "Something is wrong with the input.",
 }
 
-const getSiValue = (si: number): BigNumber =>
-  new BigNumber(10).exponentiatedBy(new BigNumber(si));
+const getSiValue = (si: number) =>
+  new BN(10).pow(new BN(si));
 
 const si = [
   { value: getSiValue(24), symbol: "y", isMil: true },
@@ -41,7 +41,7 @@ const si = [
   { value: getSiValue(9), symbol: "n", isMil: true },
   { value: getSiValue(6), symbol: "μ", isMil: true },
   { value: getSiValue(3), symbol: "m", isMil: true },
-  { value: new BigNumber(1), symbol: "" },
+  { value: new BN(1), symbol: "" },
   { value: getSiValue(3), symbol: "k" },
   { value: getSiValue(6), symbol: "M" },
   { value: getSiValue(9), symbol: "G" },
@@ -66,7 +66,7 @@ const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$");
 export function evalUnits(
   input: string,
   chainDecimals: number,
-): [BigNumber | null, string] {
+): [number | null, string] {
   //sanitize input to remove + char if exists
   input = input && input.replace("+", "");
   if (
@@ -82,38 +82,38 @@ export function evalUnits(
   // find the value from the si list
   const siVal = si.find((s) => s.symbol === symbol);
   const numberStr = input.replace(symbol, "").replace(",", ".");
-  let numeric: BigNumber = new BigNumber(0);
+  let numeric: any = new BN(0);
 
   if (!siVal) {
     return [null, EvalMessages.GIBBERISH];
   }
-  const decimalsBn = new BigNumber(10).exponentiatedBy(
-    new BigNumber(chainDecimals),
+  const decimalsBn = new BN(10).pow(
+    new BN(chainDecimals),
   );
   const containDecimal = numberStr.includes(".");
   const [decPart, fracPart] = numberStr.split(".");
   const fracDecimals = fracPart?.length || 0;
-  const fracExp = new BigNumber(10).exponentiatedBy(
-    new BigNumber(fracDecimals),
+  const fracExp = new BN(10).pow(
+    new BN(fracDecimals),
   );
   numeric = containDecimal
-    ? new BigNumber(
-        new BigNumber(decPart)
-          .multipliedBy(fracExp)
-          .plus(new BigNumber(fracPart)),
+    ? new BN(
+        new BN(decPart)
+          .mul(fracExp)
+          .add(new BN(fracPart)),
       )
-    : new BigNumber(new BigNumber(numberStr));
-  numeric = numeric.multipliedBy(decimalsBn);
+    : new BN(new BN(numberStr));
+  numeric = numeric.mul(decimalsBn);
   if (containDecimal) {
     numeric = siVal.isMil
       ? numeric.div(siVal.value).div(fracExp)
-      : numeric.multipliedBy(siVal.value).div(fracExp);
+      : numeric.mul(siVal.value).div(fracExp);
   } else {
     numeric = siVal.isMil
       ? numeric.div(siVal.value)
-      : numeric.multipliedBy(siVal.value);
+      : numeric.mul(siVal.value);
   }
-  if (numeric.eq(new BigNumber(0))) {
+  if (numeric.eq(new BN(0))) {
     return [null, EvalMessages.ZERO];
   }
   return [numeric, EvalMessages.SUCCESS];
