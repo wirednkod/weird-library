@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
-import { getTheme } from "../../utils";
-import { InputProps } from "./types";
+import { getTheme } from "../../utils"
+import { InputProps } from "./types"
 
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 export const InputElement = styled.input<InputProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { input } = theme;
+    const theme = getTheme(props)
+    const { input } = theme
     return `
         font-size: ${props.large ? input.fontSizeLarge : input.fontSize};
         display: flex;
@@ -26,27 +26,27 @@ export const InputElement = styled.input<InputProps>`
         &:disabled{
           cursor: not-allowed
         }
-    `;
+    `
   }}
-`;
+`
 
 export const ErrorParagraph = styled.p`
   ${(props) => {
-    const theme = getTheme(props);
-    const { input } = theme;
+    const theme = getTheme(props)
+    const { input } = theme
     return `
         font-size: ${input.fontSizeSmall};
         color: ${input.errorColor};
         margin: 8px 0px 0px 0px;
         line-height: 16px;
         min-height: 16px;
-    `;
+    `
   }}
-`;
+`
 export const InputContainer = styled.div<InputProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { input } = theme;
+    const theme = getTheme(props)
+    const { input } = theme
     return `
       display: flex;
       flex-direction: row;
@@ -76,25 +76,25 @@ export const InputContainer = styled.div<InputProps>`
           : "transparent"
       };`
       }
-      background-color: ${props.disabled ? "transparent" : input.background};`;
+      background-color: ${props.disabled ? "transparent" : input.background};`
   }}
-`;
+`
 
 export const InputComponentWrapper = styled.div<InputProps>`
   display: flex;
   align-items: center;
-`;
+`
 
 export function Input(props: InputProps) {
-  const [focused, setFocused] = React.useState(false);
+  const [focused, setFocused] = React.useState(false)
   const onFocus = () => {
-    if (props.onFocus) props.onFocus;
-    setFocused(true);
-  };
+    if (props.onFocus) props.onFocus
+    setFocused(true)
+  }
   const onBlur = () => {
-    if (props.onBlur) props.onBlur;
-    setFocused(false);
-  };
+    if (props.onBlur) props.onBlur
+    setFocused(false)
+  }
   return (
     <InputWrapper>
       <InputContainer
@@ -114,5 +114,5 @@ export function Input(props: InputProps) {
       </InputContainer>
       <ErrorParagraph>{props.error}</ErrorParagraph>
     </InputWrapper>
-  );
+  )
 }

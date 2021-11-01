@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import { getTheme } from "../../utils";
-import { NotificationDivProps, NotificationProps } from "./types";
+import React from "react"
+import styled from "styled-components"
+import { getTheme } from "../../utils"
+import { NotificationDivProps, NotificationProps } from "./types"
 
 export const NotificationWrapper = styled.div<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { notification } = theme;
+    const theme = getTheme(props)
+    const { notification } = theme
 
     return `
     display: flex;
@@ -58,13 +58,13 @@ export const NotificationWrapper = styled.div<NotificationDivProps>`
 				color: white;
 			}
     }
-  `;
+  `
   }}
-`;
+`
 export const IconWrapper = styled.div<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { notification } = theme;
+    const theme = getTheme(props)
+    const { notification } = theme
     return `
     display: flex;
     align-items: flex-start;
@@ -82,18 +82,18 @@ export const IconWrapper = styled.div<NotificationDivProps>`
         };
       }
     }
-  `;
+  `
   }}
-`;
+`
 export const NotificationContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: auto;
-`;
+`
 export const NotificationTitle = styled.h5<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { notification } = theme;
+    const theme = getTheme(props)
+    const { notification } = theme
     return `
         font-size: ${notification.fontSizeMedium};
         color: ${
@@ -104,13 +104,13 @@ export const NotificationTitle = styled.h5<NotificationDivProps>`
         font-weight: 500;
         margin: 0px;
         padding: 0px 0px ${notification.verticalPadding} 0px;
-    `;
+    `
   }}
-`;
+`
 export const NotificationActionWrapper = styled.div<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { notification } = theme;
+    const theme = getTheme(props)
+    const { notification } = theme
     return `
       cursor: pointer;
       display: flex;
@@ -126,13 +126,13 @@ export const NotificationActionWrapper = styled.div<NotificationDivProps>`
           };
         }
       }
-    `;
+    `
   }}
-`;
+`
 export const NotificationActionText = styled.p<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { notification } = theme;
+    const theme = getTheme(props)
+    const { notification } = theme
     return `
       font-size: ${notification.fontSize};
       color: ${
@@ -140,9 +140,9 @@ export const NotificationActionText = styled.p<NotificationDivProps>`
           ? notification[props.type].color
           : notification.info.color
       };
-    `;
+    `
   }}
-`;
+`
 export function Notification(props: NotificationProps) {
   return (
     <NotificationWrapper
@@ -183,5 +183,5 @@ export function Notification(props: NotificationProps) {
         </NotificationContentWrapper>
       </>
     </NotificationWrapper>
-  );
+  )
 }

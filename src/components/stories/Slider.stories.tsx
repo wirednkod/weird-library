@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React, { useState } from "react"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Slider } from "../Slider";
+import { Slider } from "../Slider"
 
 export default {
   title: "Components/Slider",
   component: Slider,
   argTypes: {},
-} as ComponentMeta<typeof Slider>;
+} as ComponentMeta<typeof Slider>
 
-const Template: ComponentStory<typeof Slider> = (args) => <Slider {...args} />;
+const Template: ComponentStory<typeof Slider> = (args) => <Slider {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   min: 0,
   max: 260,
   def: 195,
   debounceDelay: 500,
   onChange: (val) => console.log(val),
-};
-export const DataTickers = Template.bind({});
+}
+export const DataTickers = Template.bind({})
 DataTickers.args = {
   min: 0,
   max: 260,
   def: 65,
   dataTickers: [25, 50, 75],
   showDataTickers: "percentage",
-};
-export const SingleDataTicker = Template.bind({});
+}
+export const SingleDataTicker = Template.bind({})
 SingleDataTicker.args = {
   min: 0,
   max: 30000,
@@ -42,8 +42,8 @@ SingleDataTicker.args = {
   textColor: "#fff",
   showMinMax: true,
   maxLabel: "Max",
-};
-export const SingleDataTickerSelected = Template.bind({});
+}
+export const SingleDataTickerSelected = Template.bind({})
 SingleDataTickerSelected.args = {
   min: 0,
   max: 30000,
@@ -58,8 +58,8 @@ SingleDataTickerSelected.args = {
   textColor: "#fff",
   showMinMax: true,
   maxLabel: "Max",
-};
-export const Disabled = Template.bind({});
+}
+export const Disabled = Template.bind({})
 Disabled.args = {
   min: 0,
   max: 260,
@@ -67,8 +67,8 @@ Disabled.args = {
   showMinMax: true,
   minLabel: "Safer",
   maxLabel: "Riskier",
-};
-export const DecimalStep = Template.bind({});
+}
+export const DecimalStep = Template.bind({})
 DecimalStep.args = {
   min: 0,
   max: 2,
@@ -77,9 +77,9 @@ DecimalStep.args = {
   maxLabel: "Riskier",
   step: 0.01,
   showActualValue: true,
-};
+}
 
-export const DecimalStepWithSetValue = Template.bind({});
+export const DecimalStepWithSetValue = Template.bind({})
 DecimalStepWithSetValue.args = {
   min: 0,
   max: 10,
@@ -90,28 +90,28 @@ DecimalStepWithSetValue.args = {
   showActualValue: true,
   showDataTickers: "number",
   value: 2,
-};
+}
 
 const InputTemplate: ComponentStory<typeof Slider> = (args) => {
-  const [sliderAmount, setSliderAmount] = useState<number | undefined>();
+  const [sliderAmount, setSliderAmount] = useState<number | undefined>()
 
   return (
     <div>
       <input
         onChange={(e) => {
-          const val = e.target.value;
-          console.log(parseFloat(val));
-          setSliderAmount(parseFloat(val));
+          const val = e.target.value
+          console.log(parseFloat(val))
+          setSliderAmount(parseFloat(val))
         }}
       />
       <br />
       <br />
       <Slider value={sliderAmount} {...args} />
     </div>
-  );
-};
+  )
+}
 
-export const AlterWithInput = InputTemplate.bind({});
+export const AlterWithInput = InputTemplate.bind({})
 AlterWithInput.args = {
   min: 0,
   max: 100,
@@ -121,4 +121,4 @@ AlterWithInput.args = {
   step: 0.01,
   showActualValue: true,
   onChange: (val) => console.log("slider changed:", val),
-};
+}

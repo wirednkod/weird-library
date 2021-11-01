@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
-import styled, { css } from "styled-components";
-import { getTheme } from "../../utils";
+import styled, { css } from "styled-components"
+import { getTheme } from "../../utils"
 import {
   SliderProps,
   SliderInputProps,
   OutputProps,
   MinMaxProps,
   OptionProps,
-} from "./types";
+} from "./types"
 
-declare const window: any;
+declare const window: any
 
 const appearanceNone = css`
   appearance: none;
@@ -19,12 +19,12 @@ const appearanceNone = css`
   box-shadow: none;
   border: none;
   background: transparent;
-`;
+`
 
 const SliderInput = styled.input<SliderInputProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { slider } = theme;
+    const theme = getTheme(props)
+    const { slider } = theme
 
     return `
       -webkit-appearance: none;
@@ -155,9 +155,9 @@ const SliderInput = styled.input<SliderInputProps>`
         display: ${props.disabled ? "none;" : "flex;"}
         ${appearanceNone}
       }
-    `;
+    `
   }}
-`;
+`
 
 const getPercentage = (
   min: number,
@@ -165,13 +165,13 @@ const getPercentage = (
   value: number,
   accurate?: boolean,
 ) => {
-  const math = ((value - min) / (max - min)) * 100;
-  return accurate === false ? math : Math.round(math);
-};
+  const math = ((value - min) / (max - min)) * 100
+  return accurate === false ? math : Math.round(math)
+}
 
 const Output = styled.output<OutputProps>`
   ${(props) => {
-    const { min, max, value, isDisabled, textColor } = props;
+    const { min, max, value, isDisabled, textColor } = props
     return `
     visibility: ${isDisabled ? "hidden" : "visible"};
     font-weight: bold;
@@ -186,9 +186,9 @@ const Output = styled.output<OutputProps>`
           : `calc(${getPercentage(min, max, value, false)}% - 16px);`
         : `${getPercentage(min, max, value, false)}%;`
     }
-`;
+`
   }}
-`;
+`
 
 const DataList = styled.datalist`
   display: flex;
@@ -200,18 +200,18 @@ const DataList = styled.datalist`
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-`;
+`
 
 const MinMaxContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
   position: relative;
-`;
+`
 const Option = styled.div<OptionProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { slider } = theme;
+    const theme = getTheme(props)
+    const { slider } = theme
     return `
       position: absolute;
       text-indent: -9999px;
@@ -231,9 +231,9 @@ const Option = styled.div<OptionProps>`
           : "none;"
       }
       left: ${props.ticker}%;
-  `;
+  `
   }}
-`;
+`
 
 const MinMax = styled.div<MinMaxProps>`
   font-weight: bold;
@@ -244,12 +244,12 @@ const MinMax = styled.div<MinMaxProps>`
       : props.textColor
       ? props.textColor
       : "#E2665C"};
-`;
+`
 const SliderWrapper = styled.div`
   position: relative;
   display: flex;
   margin-top: 12px;
-`;
+`
 
 export function Slider({
   min = 0,
@@ -272,32 +272,32 @@ export function Slider({
   step = 1,
   onChange,
 }: SliderProps) {
-  const dataTickersList = [];
+  const dataTickersList = []
   const [val, setVal] = useState<number>(
     defaultValue ? defaultValue : (max - min) / 2,
-  );
-  const [alterDisabled, setAlterDisabled] = useState<boolean>(isDisabled);
+  )
+  const [alterDisabled, setAlterDisabled] = useState<boolean>(isDisabled)
 
   useEffect(() => {
     if (value) {
-      setVal(value);
+      setVal(value)
     } else if (
       !isNaN(value || 0) ||
       value === undefined ||
       value === null ||
       value === 0
     ) {
-      setVal(0);
+      setVal(0)
     }
-  }, [value]);
+  }, [value])
 
   useEffect(() => {
     if (val > max || val < min || isDisabled) {
-      setAlterDisabled(true);
+      setAlterDisabled(true)
     } else {
-      setAlterDisabled(false);
+      setAlterDisabled(false)
     }
-  }, [isDisabled, val, min, max]);
+  }, [isDisabled, val, min, max])
 
   if (showDataTickers && !alterDisabled) {
     const ticks =
@@ -306,7 +306,7 @@ export function Slider({
         const tickValue =
           showDataTickers === "percentage"
             ? tick
-            : getPercentage(min, max, tick);
+            : getPercentage(min, max, tick)
         return (
           <Option
             ticker={tickValue}
@@ -317,13 +317,13 @@ export function Slider({
           >
             {tickValue}
           </Option>
-        );
-      });
+        )
+      })
     dataTickersList.push(
       <DataList id="ticks" key="ticks_datalist">
         {ticks}
       </DataList>,
-    );
+    )
   }
 
   return (
@@ -358,9 +358,9 @@ export function Slider({
                 ? min
                 : e.target.value <= max
                 ? e.target.value
-                : max;
-            setVal(val);
-            onChange(val);
+                : max
+            setVal(val)
+            onChange(val)
           }}
           onTouchEnd={(e: any) => {
             if (onBlur !== undefined) {
@@ -369,9 +369,9 @@ export function Slider({
                   ? min
                   : e.target.value <= max
                   ? e.target.value
-                  : max;
-              setVal(val);
-              onBlur(val);
+                  : max
+              setVal(val)
+              onBlur(val)
             }
           }}
           onDragEnd={(e: any) => {
@@ -381,9 +381,9 @@ export function Slider({
                   ? min
                   : e.target.value <= max
                   ? e.target.value
-                  : max;
-              setVal(val);
-              onBlur(val);
+                  : max
+              setVal(val)
+              onBlur(val)
             }
           }}
           onMouseUp={(e: any) => {
@@ -393,9 +393,9 @@ export function Slider({
                   ? min
                   : e.target.value <= max
                   ? e.target.value
-                  : max;
-              setVal(val);
-              onBlur(val);
+                  : max
+              setVal(val)
+              onBlur(val)
             }
           }}
         />
@@ -412,5 +412,5 @@ export function Slider({
         </MinMaxContainer>
       ) : null}
     </>
-  );
+  )
 }

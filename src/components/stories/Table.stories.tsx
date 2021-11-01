@@ -1,32 +1,32 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import styled from "styled-components";
-import { getTheme } from "../../utils";
+import React from "react"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
+import styled from "styled-components"
+import { getTheme } from "../../utils"
 
-import { Table } from "../Table";
-import { Button } from "../Buttons";
+import { Table } from "../Table"
+import { Button } from "../Buttons"
 
 export default {
   title: "Components/Table",
   component: Table,
   argTypes: {},
-} as ComponentMeta<typeof Table>;
+} as ComponentMeta<typeof Table>
 
 const Paragraph = styled.p`
   ${(props) => {
-    const theme = getTheme(props);
-    const { fontFamily } = theme;
+    const theme = getTheme(props)
+    const { fontFamily } = theme
     return `
       color: #D6D6D6;
       font-size: 14px;
       margin: 0px;
       font-family: ${fontFamily}
-  `;
+  `
   }}
-`;
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
+`
+const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   headStructure: [
     { size: 2, title: "column one" },
@@ -90,4 +90,4 @@ Default.args = {
       },
     ],
   ],
-};
+}

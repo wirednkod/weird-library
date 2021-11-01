@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 import {
   TableHeadItemProps,
   TableRowItemProps,
   TableRowWraperProps,
   TableRowProps,
-} from "./types";
-import { getTheme } from "../../utils";
+} from "./types"
+import { getTheme } from "../../utils"
 
 export const TableRowItem = styled.div<TableHeadItemProps>`
   ${(props) => {
@@ -32,13 +32,13 @@ export const TableRowItem = styled.div<TableHeadItemProps>`
             `
           }
         }
-    `;
+    `
   }}
-`;
+`
 export const TableRowWrapper = styled.div<TableRowWraperProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { table } = theme;
+    const theme = getTheme(props)
+    const { table } = theme
     return `
       display: flex;
       flex-direction: row;
@@ -46,11 +46,11 @@ export const TableRowWrapper = styled.div<TableRowWraperProps>`
       background-color: ${table.rowBackground};
       align-items: center;
       margin-bottom: ${table.rowMargin};
-    `;
+    `
   }}
-`;
+`
 export function TableRow(props: TableRowProps) {
-  let { item } = props;
+  let { item } = props
   return (
     <TableRowWrapper i={props.i} length={item.length}>
       {item.map((element: TableRowItemProps, i) => (
@@ -59,5 +59,5 @@ export function TableRow(props: TableRowProps) {
         </TableRowItem>
       ))}
     </TableRowWrapper>
-  );
+  )
 }

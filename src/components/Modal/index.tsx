@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { ModalProps } from "./types";
+import React from "react"
+import styled from "styled-components"
+import { ModalProps } from "./types"
 
 const ModalWrapper = styled.div`
   position: fixed;
@@ -13,7 +13,7 @@ const ModalWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
 const ModalBackdrop = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ const ModalBackdrop = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-`;
+`
 
 const ModalContent = styled.div`
   display: flex;
@@ -43,12 +43,12 @@ const ModalContent = styled.div`
     height: 100vh;
     width: calc(100% - 48px);
   }
-`;
+`
 const ModalHeader = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 24px;
-`;
+`
 const CloseWrapper = styled.div`
   display: flex;
   flex: auto;
@@ -62,7 +62,7 @@ const CloseWrapper = styled.div`
       opacity: 1;
     }
   }
-`;
+`
 const ModalTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,25 +73,25 @@ const ModalTitleWrapper = styled.div`
     width: 80%;
     max-width: 80%;
   }
-`;
+`
 const ChildrenWrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 const ModalTitle = styled.h5`
   font-size: 28px;
   font-weight: 400;
   color: white;
   margin: 0px;
-`;
+`
 const ModalDescription = styled.h5`
   color: #a5a8a9;
   font-size: 12px;
   margin: 0px;
-`;
+`
 
 export const Modal = (props: ModalProps) => {
-  let { title, description, close, children } = props;
+  let { title, description, close, children } = props
   return (
     <ModalWrapper>
       <ModalBackdrop onClick={() => close()} />
@@ -106,6 +106,6 @@ export const Modal = (props: ModalProps) => {
         <ChildrenWrapper>{children}</ChildrenWrapper>
       </ModalContent>
     </ModalWrapper>
-  );
-};
-export default Modal;
+  )
+}
+export default Modal

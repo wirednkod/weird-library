@@ -1,13 +1,13 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Tooltip } from "../Tooltip";
+import { Tooltip } from "../Tooltip"
 
 export default {
   title: "Components/Tooltip",
   component: Tooltip,
   argTypes: {},
-} as ComponentMeta<typeof Tooltip>;
+} as ComponentMeta<typeof Tooltip>
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <div style={{ margin: "100px 0 100px 40%" }}>
@@ -26,10 +26,10 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
       </div>
     </Tooltip>
   </div>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   text: "This is the text of the Tooltip that will popup",
   placement: "top",
-};
+}

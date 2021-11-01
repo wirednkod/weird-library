@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import { getTheme, isEmpty } from "../../utils";
+import React, { useEffect, useRef, useState } from "react"
+import { getTheme, isEmpty } from "../../utils"
 
-import styled from "styled-components";
-import useClickedOutside from "../../hooks/useClickedOutside";
+import styled from "styled-components"
+import useClickedOutside from "../../hooks/useClickedOutside"
 
 import {
   DropdownItemProps,
   DropdownProps,
   ListItemProps,
   DropDownHeaderProps,
-} from "./types";
+} from "./types"
 
 const DropDownContainer = styled.div`
   position: relative;
@@ -17,17 +17,17 @@ const DropDownContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-`;
+`
 
 const DropDownHeader = styled.div<DropDownHeaderProps>`
   ${(props) => {
-    const theme = getTheme(props);
+    const theme = getTheme(props)
     const {
       dropdown: {
         disabled,
         header: { fontFamily, fontSize, background, lineHeight, title, desc },
       },
-    } = theme;
+    } = theme
     return `
     font-family: ${fontFamily};
     font-size: ${fontSize};
@@ -44,17 +44,17 @@ const DropDownHeader = styled.div<DropDownHeaderProps>`
       padding: ${desc.padding};
       width: ${desc.width};
     }
-`;
+`
   }}
-`;
+`
 
 const ListItem = styled.div<ListItemProps>`
   ${(props) => {
-    const theme = getTheme(props);
+    const theme = getTheme(props)
     const {
       dropdown: { header, item },
-    } = theme;
-    const t = props.isHeader ? header : item;
+    } = theme
+    const t = props.isHeader ? header : item
     return `
   position: relative;
   font-family: ${t.fontFamily};
@@ -79,58 +79,58 @@ const ListItem = styled.div<ListItemProps>`
     color: ${t.desc.color};
     padding: ${t.desc.padding};
   }
-`;
+`
   }}
-`;
+`
 
 const ListItemTexts = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const ItemsContainer = styled.div`
   ${(props) => {
-    const theme = getTheme(props);
+    const theme = getTheme(props)
     const {
       dropdown: {
         width,
         item: { background },
       },
-    } = theme;
+    } = theme
     return `
     position: absolute;
     z-index: 9999;
     width: ${width};
     top: 100%;
     background-color: ${background};
-  `;
+  `
   }}
-`;
+`
 
-const ListItemTitle = styled.div``;
-const ListItemDesc = styled.div``;
+const ListItemTitle = styled.div``
+const ListItemDesc = styled.div``
 
 export function Dropdown(props: DropdownProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] =
-    useState<DropdownItemProps | null>(null);
+    useState<DropdownItemProps | null>(null)
 
-  const { options, headerOption, onChange } = props;
+  const { options, headerOption, onChange } = props
 
-  const wrapperRef = useRef(null);
-  const clicked = useClickedOutside(wrapperRef);
+  const wrapperRef = useRef(null)
+  const clicked = useClickedOutside(wrapperRef)
 
-  const toggling = () => setIsOpen(!isOpen);
+  const toggling = () => setIsOpen(!isOpen)
 
   const onOptionClicked = (option: DropdownItemProps, i: number) => () => {
-    setSelectedOption(option);
-    setIsOpen(false);
-    onChange(i);
-  };
+    setSelectedOption(option)
+    setIsOpen(false)
+    onChange(i)
+  }
 
   useEffect(() => {
-    clicked && setIsOpen(false);
-  }, [clicked]);
+    clicked && setIsOpen(false)
+  }, [clicked])
 
   const header = (
     selectedOption: DropdownItemProps | null,
@@ -150,21 +150,21 @@ export function Dropdown(props: DropdownProps) {
           {stuff.desc && <ListItemDesc>{stuff.desc}</ListItemDesc>}
         </ListItemTexts>
       </ListItem>
-    );
+    )
 
     if (
       headerOption &&
       !isEmpty(headerOption as object) &&
       headerOption.title
     ) {
-      return magicStuff(headerOption);
+      return magicStuff(headerOption)
     }
     return selectedOption
       ? magicStuff(selectedOption)
       : magicStuff({
           title: "select an option",
-        });
-  };
+        })
+  }
 
   return (
     <DropDownContainer ref={wrapperRef}>
@@ -178,7 +178,7 @@ export function Dropdown(props: DropdownProps) {
       {isOpen && (
         <ItemsContainer>
           {options.map((option, i) => {
-            const { title, desc, icon } = option;
+            const { title, desc, icon } = option
             return (
               <ListItem
                 onClick={onOptionClicked(option, i)}
@@ -200,10 +200,10 @@ export function Dropdown(props: DropdownProps) {
                   {desc && <ListItemDesc>{desc}</ListItemDesc>}
                 </ListItemTexts>
               </ListItem>
-            );
+            )
           })}
         </ItemsContainer>
       )}
     </DropDownContainer>
-  );
+  )
 }

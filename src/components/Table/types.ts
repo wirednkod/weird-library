@@ -1,29 +1,29 @@
-import React from "react";
+import React from "react"
 export interface TableHeadItemStructure {
-  title: string;
-  size?: number;
+  title: string
+  size?: number
 }
 export interface TableHeadItemProps {
-  size?: number;
+  size?: number
 }
 export interface TableHeadProps {
-  structure: Array<TableHeadItemStructure>;
+  structure: Array<TableHeadItemStructure>
 }
 
 export interface TableRowItemProps {
-  size?: number;
-  value: React.ReactElement;
+  size?: number
+  value: React.ReactElement
 }
 export interface TableRowProps {
-  item: TableRowItemProps[];
-  i: number;
+  item: TableRowItemProps[]
+  i: number
 }
 export interface TableRowWraperProps {
-  i: number;
-  length: number;
+  i: number
+  length: number
 }
 
 export interface TableProps {
-  headStructure?: Array<TableHeadItemStructure>;
-  content: Array<TableRowItemProps[]>;
+  headStructure?: Array<TableHeadItemStructure>
+  content: Array<TableRowItemProps[]>
 }

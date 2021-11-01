@@ -1,16 +1,16 @@
-import typescript from "rollup-plugin-typescript2";
-import json from '@rollup/plugin-json';
-import pkg from "./package.json";
+import typescript from "rollup-plugin-typescript2"
+import json from "@rollup/plugin-json"
+import pkg from "./package.json"
 
-const extensions = [".js", ".jsx", ".ts", ".tsx"];
-const input = "src/index.tsx";
+const extensions = [".js", ".jsx", ".ts", ".tsx"]
+const input = "src/index.tsx"
 
 const plugins = [
   typescript({
     typescript: require("typescript"),
   }),
-  json()
-];
+  json(),
+]
 
 export default [
   {
@@ -31,4 +31,4 @@ export default [
     },
     plugins,
   },
-];
+]

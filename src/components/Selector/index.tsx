@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import { getTheme } from "../../utils";
-import { SelectorProps, SelectorItemProps } from "./types";
+import React from "react"
+import styled from "styled-components"
+import { getTheme } from "../../utils"
+import { SelectorProps, SelectorItemProps } from "./types"
 
 export const SelectorWrapper = styled.ul`
   ${(props) => {
-    const theme = getTheme(props);
-    const { selector } = theme;
+    const theme = getTheme(props)
+    const { selector } = theme
     return `
         margin: 0px;
         padding: 0px;
@@ -21,13 +21,13 @@ export const SelectorWrapper = styled.ul`
         max-width: max-content;
         max-width: -moz-max-content;
         max-width: -webkit-max-content;
-    `;
+    `
   }}
-`;
+`
 export const SelectorItem = styled.li<SelectorItemProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { selector } = theme;
+    const theme = getTheme(props)
+    const { selector } = theme
 
     return `
         padding: ${selector.verticalPadding} ${selector.horizontalPadding};
@@ -60,9 +60,9 @@ export const SelectorItem = styled.li<SelectorItemProps>`
               cursor: not-allowed;
             }`
         }
-    `;
+    `
   }}
-`;
+`
 
 export function Selector(props: SelectorProps) {
   let selectors = props.items.map((item, i) => (
@@ -73,8 +73,8 @@ export function Selector(props: SelectorProps) {
     >
       {item}
     </SelectorItem>
-  ));
+  ))
   return props.items.length >= 2 ? (
     <SelectorWrapper>{selectors}</SelectorWrapper>
-  ) : null;
+  ) : null
 }

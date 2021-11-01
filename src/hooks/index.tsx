@@ -1,4 +1,4 @@
-import useClickedOutside from "./useClickedOutside";
-import useDebounce from "./useDebounce";
+import useClickedOutside from "./useClickedOutside"
+import useDebounce from "./useDebounce"
 
-export { useClickedOutside, useDebounce };
+export { useClickedOutside, useDebounce }

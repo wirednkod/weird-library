@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "resolveJsonModule": true,
-    "module": "es2015",  // "es2015" makes Typescript compiler output compatible with Rollup
+    "module": "es2015", // "es2015" makes Typescript compiler output compatible with Rollup
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "node",
@@ -16,9 +16,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "src/stories/*",
-    "src/components/stories/*"
-  ]
+  "exclude": ["node_modules", "src/stories/*", "src/components/stories/*"]
 }

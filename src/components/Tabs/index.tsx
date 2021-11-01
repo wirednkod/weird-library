@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
-import { TabProps, TabsProps } from "./types";
-import { getTheme } from "../../utils";
+import { TabProps, TabsProps } from "./types"
+import { getTheme } from "../../utils"
 
 export const TabItem = styled.li<TabProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { fontSize, tabs } = theme;
+    const theme = getTheme(props)
+    const { fontSize, tabs } = theme
     return `
         font-family: ${theme.fontFamily || `'Poppins', sans-serif`};
         font-weight: 400;
@@ -25,13 +25,13 @@ export const TabItem = styled.li<TabProps>`
             cursor: pointer;
             color: ${tabs.activeColor};
         }
-    `;
+    `
   }}
-`;
+`
 export const TabsList = styled.ul`
   ${(props) => {
-    const theme = getTheme(props);
-    const { tabs } = theme;
+    const theme = getTheme(props)
+    const { tabs } = theme
     return `
     padding: 0px;
     margin: 0px;
@@ -47,9 +47,9 @@ export const TabsList = styled.ul`
       border: ${tabs.borderSize}px solid ${tabs.borderColor};
       content: '';
     }
-    `;
+    `
   }}
-`;
+`
 
 export function Tabs(props: TabsProps) {
   let tabs = props.tabs.map((t, i) => (
@@ -60,6 +60,6 @@ export function Tabs(props: TabsProps) {
     >
       {t}
     </TabItem>
-  ));
-  return <TabsList theme={props.theme}>{tabs}</TabsList>;
+  ))
+  return <TabsList theme={props.theme}>{tabs}</TabsList>
 }

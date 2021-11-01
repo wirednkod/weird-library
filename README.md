@@ -9,13 +9,13 @@ npm i
 ## Usage
 
 ```tsx
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import { MyComponent } from "myLibrary";
+import { MyComponent } from "myLibrary"
 
 class Example extends Component {
   render() {
-    return <MyComponent />;
+    return <MyComponent />
   }
 }
 ```
