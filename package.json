@@ -36,12 +36,8 @@
 		"typescript": "^4.3.5"
 	},
 	"scripts": {
-		"tsc-watch": "tsc-watch --noClear -p ./tsconfig.json",
-		"clean": "rimraf lib/*",
-		"build": "yarn run clean && yarn build:esm && yarn build:cjs && yarn run postbuild",
-		"build:esm": "tsc",
-		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
-		"postbuild": "copyfiles ./styles/* ./lib/",
+		"clean": "rimraf dist/* && rimraf node_modules",
+		"build": "yarn run clean && rollup -c --mini",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"format": "prettier --write ."
