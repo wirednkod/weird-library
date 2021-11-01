@@ -1,12 +1,12 @@
 {
 	"name": "react-components-library",
 	"version": "0.0.1",
-	"main": "./lib/cjs/index.js",
-	"module": "./lib/esm/index.js",
-	"types": "./lib/esm/index.d.ts",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
 	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.14.8",
+		"@rollup/plugin-json": "^4.1.0",
 		"@storybook/addon-actions": "^6.4.0-alpha.20",
 		"@storybook/addon-essentials": "^6.4.0-alpha.20",
 		"@storybook/addon-links": "^6.4.0-alpha.20",
@@ -29,17 +29,15 @@
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"rimraf": "^3.0.2",
+		"rollup": "^2.58.3",
+		"rollup-plugin-typescript2": "^0.30.0",
 		"styled-components": "^4.4.1",
 		"tsc-watch": "^4.4.0",
 		"typescript": "^4.3.5"
 	},
 	"scripts": {
-		"tsc-watch": "tsc-watch --noClear -p ./tsconfig.json",
-		"clean": "rimraf lib/*",
-		"build": "yarn run clean && yarn build:esm && yarn build:cjs && yarn run postbuild",
-		"build:esm": "tsc",
-		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
-		"postbuild": "copyfiles ./styles/* ./lib/",
+		"clean": "rimraf dist/* && rimraf node_modules",
+		"build": "yarn run clean && rollup -c --mini",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"format": "prettier --write ."
@@ -52,10 +50,9 @@
 		"lib/"
 	],
 	"dependencies": {
-		"@types/bignumber.js": "^5.0.0",
-		"bignumber.js": "^9.0.1",
-		"web3-utils": "^1.5.2",
+		"bn.js": "^9.0.1",
 		"cross-env": "^7.0.3",
-		"styled-components": "^4.4.1"
+		"styled-components": "^4.4.1",
+		"web3-utils": "^1.5.2"
 	}
 }
