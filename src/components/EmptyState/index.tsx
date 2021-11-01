@@ -1,18 +1,18 @@
-import React from "react";
-import { getTheme } from "../../utils";
+import React from "react"
+import { getTheme } from "../../utils"
 
-import styled from "styled-components";
+import styled from "styled-components"
 
 import {
   EmptyStateProps,
   EmptyStateParagraphProps,
   EmptyStateWrapperProps,
-} from "./types";
+} from "./types"
 
 export const EmptyStateWrapper = styled.div<EmptyStateWrapperProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { emptyState } = theme;
+    const theme = getTheme(props)
+    const { emptyState } = theme
     return `
       display: flex;
       align-items: center;
@@ -22,13 +22,13 @@ export const EmptyStateWrapper = styled.div<EmptyStateWrapperProps>`
         !props.disabledBorder ? `1px solid ${emptyState.borderColor}` : `none`
       };
       padding: ${emptyState.padding} 0px;
-    `;
+    `
   }}
-`;
+`
 export const EmptyStateParagraph = styled.p<EmptyStateParagraphProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { fontSize, emptyState } = theme;
+    const theme = getTheme(props)
+    const { fontSize, emptyState } = theme
     return `
       font-size: ${fontSize.small};
       color: ${emptyState.color};
@@ -38,21 +38,21 @@ export const EmptyStateParagraph = styled.p<EmptyStateParagraphProps>`
           : `${emptyState.textMargin} 0px`
       }
       };
-    `;
+    `
   }}
-`;
+`
 export const EmptyStateTitle = styled.h5`
   ${(props) => {
-    const theme = getTheme(props);
-    const { fontSize, emptyState } = theme;
+    const theme = getTheme(props)
+    const { fontSize, emptyState } = theme
     return `
       font-size: ${fontSize.h5};
       color: ${emptyState.color};
       margin-top: ${emptyState.headMarginTop};
       margin-bottom: ${emptyState.headMarginBottom};
-    `;
+    `
   }}
-`;
+`
 
 export function EmptyState(props: EmptyStateProps) {
   return (
@@ -63,5 +63,5 @@ export function EmptyState(props: EmptyStateProps) {
         {props.text}
       </EmptyStateParagraph>
     </EmptyStateWrapper>
-  );
+  )
 }

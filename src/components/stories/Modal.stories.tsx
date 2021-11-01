@@ -1,8 +1,8 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Cross } from "../..";
+import React from "react"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { Cross } from "../.."
 
-import { Modal } from "../Modal";
+import { Modal } from "../Modal"
 
 export default {
   title: "Components/Modal",
@@ -10,11 +10,11 @@ export default {
   argTypes: {
     disabled: {},
   },
-} as ComponentMeta<typeof Modal>;
+} as ComponentMeta<typeof Modal>
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   title: "Some",
   wordsWidth: 180,
@@ -25,10 +25,10 @@ Default.args = {
   ),
   icon: <Cross color="#ffffff" />,
   close: () => {
-    console.log("lol");
+    console.log("lol")
   },
-};
-export const WithDescription = Template.bind({});
+}
+export const WithDescription = Template.bind({})
 WithDescription.args = {
   title: "Some",
   wordsWidth: 180,
@@ -40,6 +40,6 @@ WithDescription.args = {
   icon: <Cross color="#ffffff" />,
   description: "This is a description",
   close: () => {
-    console.log("lol");
+    console.log("lol")
   },
-};
+}

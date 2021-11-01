@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-import React from "react";
+import React from "react"
 
 interface ButtonInf {
-  children: any;
-  isMetaMask?: boolean;
-  onClick: () => void;
+  children: any
+  isMetaMask?: boolean
+  onClick: () => void
 }
 
 interface StyleProps {
-  primary?: boolean;
+  primary?: boolean
 }
 
 const LoginButton = styled.button<StyleProps>`
@@ -27,16 +27,16 @@ const LoginButton = styled.button<StyleProps>`
     margin-left: 8px;
     color: #fff;
   }
-`;
+`
 
 export function LoginSqueezer({ children, isMetaMask, onClick }: ButtonInf) {
-  const IconComponent = isMetaMask ? Metamask : WalletConnect;
+  const IconComponent = isMetaMask ? Metamask : WalletConnect
   return (
     <LoginButton onClick={onClick}>
       <IconComponent />
       <p className="textLoginButton">{children}</p>
     </LoginButton>
-  );
+  )
 }
 
 function Metamask() {
@@ -252,7 +252,7 @@ function Metamask() {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
 
 function WalletConnect() {
@@ -269,5 +269,5 @@ function WalletConnect() {
         fill="#3B99FC"
       />
     </svg>
-  );
+  )
 }

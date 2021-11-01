@@ -10,18 +10,18 @@ type PositionType =
   | "bottomRight"
   | "left"
   | "leftTop"
-  | "leftBottom";
+  | "leftBottom"
 
 export interface TooltipCompProps {
-  children: any;
-  text: string;
-  placement: PositionType;
+  children: any
+  text: string
+  placement: PositionType
 }
 
 export interface TooltipTextProps {
-  placement: PositionType;
+  placement: PositionType
 }
 
 export interface TooltipProps {
-  placement: PositionType;
+  placement: PositionType
 }

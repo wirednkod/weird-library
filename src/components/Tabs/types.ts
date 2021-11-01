@@ -1,9 +1,9 @@
 export interface TabProps {
-  active: boolean;
+  active: boolean
 }
 export interface TabsProps {
-  onTabChange: (i?: number) => void;
-  activeTab: number | undefined;
-  tabs: string[];
-  theme?: any;
+  onTabChange: (i?: number) => void
+  activeTab: number | undefined
+  tabs: string[]
+  theme?: any
 }

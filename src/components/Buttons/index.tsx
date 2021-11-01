@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from "react"
+import styled, { keyframes } from "styled-components"
 
 import {
   LoadingDotsProps,
@@ -9,14 +9,14 @@ import {
   MenuButtonProps,
   MetaMask,
   WalletConnect,
-} from "./types";
+} from "./types"
 
-import { getTheme } from "../../utils";
+import { getTheme } from "../../utils"
 
 export const Button = styled.button<ButtonProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { button } = theme;
+    const theme = getTheme(props)
+    const { button } = theme
     return `
   font-family: ${theme.fontFamily || `'Poppins', sans-serif`};
   font-weight: ${theme.fontWeight || "500"};
@@ -33,9 +33,9 @@ export const Button = styled.button<ButtonProps>`
 	&:hover([disabled]){
 		cursor: not-allowed;
 	}
-  `;
+  `
   }}
-`;
+`
 
 export const MenuButton = styled(Button)<MenuButtonProps>`
   width: 100%;
@@ -54,35 +54,35 @@ export const MenuButton = styled(Button)<MenuButtonProps>`
     margin-left: 8px;
     color: #fff;
   }
-`;
+`
 
 const BounceAnimation = keyframes`
   0% { transform: scale(0.1, 0.1) }
   50% { transform: scale(0.9, 0.9) }
   100% { transform: scale(0.1, 0.1) }
-`;
+`
 
 const DotWrapper = styled.div`
   display: flex;
   align-items: flex-end;
-`;
+`
 
 const Dot = styled.div<DotProps>`
   ${(props) => {
-    const theme = getTheme(props);
-    const { button } = theme;
+    const theme = getTheme(props)
+    const { button } = theme
     return `
     background-color: ${button[props.buttonType].color};
     border-radius: 50%;
     width: 5px;
     height: 5px;
     margin: 0 2px;
-  `;
+  `
   }}
   /* Animation */
   animation: ${BounceAnimation} 1s linear infinite;
   animation-delay: ${(props) => props.delay};
-`;
+`
 
 export function LoadingDots(props: LoadingDotsProps) {
   return (
@@ -103,7 +103,7 @@ export function LoadingDots(props: LoadingDotsProps) {
         color={props.loadingColor}
       />
     </DotWrapper>
-  );
+  )
 }
 
 export function LoginButton({
@@ -119,5 +119,5 @@ export function LoginButton({
       {isWalletConnect && <WalletConnect />}
       <p>{children}</p>
     </MenuButton>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
-import { TableHeadProps, TableHeadItemProps } from "./types";
+import { TableHeadProps, TableHeadItemProps } from "./types"
 
-import { getTheme } from "../../utils";
+import { getTheme } from "../../utils"
 
 export const TableHeadWrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export const TableHeadWrapper = styled.div`
   @media screen and (max-width: 800px) {
     min-width: 750px;
   }
-`;
+`
 
 export const TableHeadItem = styled.div<TableHeadItemProps>`
   ${(props) => {
@@ -38,24 +38,24 @@ export const TableHeadItem = styled.div<TableHeadItemProps>`
             `
           }
         }
-    `;
+    `
   }}
-`;
+`
 export const TableHeadParagraph = styled.p`
   ${(props) => {
-    const theme = getTheme(props);
-    const { fontFamily } = theme;
+    const theme = getTheme(props)
+    const { fontFamily } = theme
     return `
       color: #838383;
       font-size: 12px;
       margin: 0px;
       font-family: ${fontFamily}
-  `;
+  `
   }}
-`;
+`
 
 export function TableHead(props: TableHeadProps) {
-  let { structure } = props;
+  let { structure } = props
   let tableHead = structure.map((item, i) => (
     <TableHeadItem
       size={item.size}
@@ -63,6 +63,6 @@ export function TableHead(props: TableHeadProps) {
     >
       <TableHeadParagraph>{item.title}</TableHeadParagraph>
     </TableHeadItem>
-  ));
-  return <TableHeadWrapper>{tableHead}</TableHeadWrapper>;
+  ))
+  return <TableHeadWrapper>{tableHead}</TableHeadWrapper>
 }

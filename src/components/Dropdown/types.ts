@@ -1,29 +1,29 @@
-import React from "react";
+import React from "react"
 
 export interface DropdownProps {
-  onChange: (val: any) => void;
-  headerOption?: DropdownItemProps;
-  options: DropdownItemProps[];
-  disabled?: boolean;
-  children?: any;
-  theme?: any;
+  onChange: (val: any) => void
+  headerOption?: DropdownItemProps
+  options: DropdownItemProps[]
+  disabled?: boolean
+  children?: any
+  theme?: any
 }
 
 export interface DropdownItemProps {
-  title: React.ReactElement | string;
-  desc?: React.ReactElement | string;
-  icon?: React.ReactElement;
+  title: React.ReactElement | string
+  desc?: React.ReactElement | string
+  icon?: React.ReactElement
 }
 
 export interface ListItemProps {
-  onOptionClicked?: (option: DropdownItemProps, i: number) => void;
-  option?: DropdownItemProps;
-  index?: number;
-  isHeader?: boolean;
+  onOptionClicked?: (option: DropdownItemProps, i: number) => void
+  option?: DropdownItemProps
+  index?: number
+  isHeader?: boolean
 }
 
 export interface DropDownHeaderProps {
-  disabled?: boolean;
-  onClick?: () => void;
-  theme?: any;
+  disabled?: boolean
+  onClick?: () => void
+  theme?: any
 }

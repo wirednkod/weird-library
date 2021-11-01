@@ -1,16 +1,16 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Wallet } from "../..";
+import React from "react"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { Wallet } from "../.."
 
-import { Input } from "../Input";
-import styled from "styled-components";
+import { Input } from "../Input"
+import styled from "styled-components"
 
 const InputComponentLeft = styled.div`
   padding-left: 16px;
-`;
+`
 const InputComponentRight = styled.div`
   padding-right: 16px;
-`;
+`
 
 export default {
   title: "Components/Input",
@@ -21,33 +21,33 @@ export default {
       control: { type: "radio" },
     },
   },
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof Input>
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   placeholder: "Amount",
-};
+}
 
-export const WithValue = Template.bind({});
+export const WithValue = Template.bind({})
 WithValue.args = {
   value: "1.3241",
-};
+}
 
-export const WithError = Template.bind({});
+export const WithError = Template.bind({})
 WithError.args = {
   value: "1.3241",
   error: "Error Message",
-};
+}
 
-export const Disabled = Template.bind({});
+export const Disabled = Template.bind({})
 Disabled.args = {
   value: "1.3241",
   disabled: true,
-};
+}
 
-export const WithIcon = Template.bind({});
+export const WithIcon = Template.bind({})
 WithIcon.args = {
   placeholder: "Amount",
   component: (
@@ -55,9 +55,9 @@ WithIcon.args = {
       <Wallet />
     </InputComponentLeft>
   ),
-};
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   placeholder: "Search",
   component: (
@@ -67,9 +67,9 @@ Large.args = {
   ),
   componentPosition: "right",
   large: true,
-};
+}
 
-export const LargeActive = Template.bind({});
+export const LargeActive = Template.bind({})
 LargeActive.args = {
   placeholder: "Search",
   value: "0x8885af4612de6d3cca48bd044bed4a2e49337b5240e5f436d951dbc59bdb0b75",
@@ -80,9 +80,9 @@ LargeActive.args = {
   ),
   componentPosition: "right",
   large: true,
-};
+}
 
-export const LargeError = Template.bind({});
+export const LargeError = Template.bind({})
 LargeError.args = {
   placeholder: "Search",
   value: "0x8885af4612de6d3cca48bd044bed4a2e49337b5240e5f436d951dbc59bdb0b75",
@@ -94,4 +94,4 @@ LargeError.args = {
   ),
   componentPosition: "right",
   large: true,
-};
+}

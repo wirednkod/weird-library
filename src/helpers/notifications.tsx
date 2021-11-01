@@ -9,6 +9,6 @@ const sendNotification = (store: any, notification: React.ReactElement) => {
       duration: 5000,
       pauseOnHover: true,
     },
-  });
-};
-export default sendNotification;
+  })
+}
+export default sendNotification

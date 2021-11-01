@@ -1,51 +1,51 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from "react"
+import styled, { keyframes } from "styled-components"
 
-import { LoadingDotsProps, DotProps, WordsProps } from "./types";
+import { LoadingDotsProps, DotProps, WordsProps } from "./types"
 
-import { getTheme } from "../../utils";
+import { getTheme } from "../../utils"
 
 const BounceAnimation = keyframes`
   0% { transform: scale(0.1, 0.1) }
   50% { transform: scale(0.9, 0.9) }
   100% { transform: scale(0.1, 0.1) }
-`;
+`
 
 const DotWrapper = styled.div`
   display: flex;
   justify-content: center;
-`;
+`
 
 const Dot = styled.div<DotProps>`
   ${(props) => {
-    const theme = getTheme(props);
+    const theme = getTheme(props)
     const {
       loader: { background, dotSize },
-    } = theme;
+    } = theme
     return `
       background-color: ${background};
       border-radius: 50%;
       width: ${dotSize};
       height: ${dotSize}; 
       margin: 0 5px;
-    `;
+    `
   }}
   /* Animation */
     animation: ${BounceAnimation} 1s linear infinite;
   animation-delay: ${(props) => props.delay};
-`;
+`
 
 const LoaderContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const Separator = styled.div`
   padding: 0 7px;
   &:before {
     content: "|";
   }
-`;
+`
 
 const Wrapper = styled.section`
   position: relative;
@@ -53,16 +53,16 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   margin-top: 10px;
-`;
+`
 
 const Sentence = styled.div<WordsProps>`
   ${(props) => {
-    const theme = getTheme(props);
+    const theme = getTheme(props)
     const {
       loader: {
         loadingText: { fontFamily, fontSize, color },
       },
-    } = theme;
+    } = theme
 
     return `
   font-family: ${fontFamily};
@@ -78,9 +78,9 @@ const Sentence = styled.div<WordsProps>`
     font-weight: normal;
   }
   ${props.wordsWidth && `width: ${props.wordsWidth}px;`}
-`;
+`
   }}
-`;
+`
 
 const Rotate = keyframes`
   0% { opacity: 0; }
@@ -90,7 +90,7 @@ const Rotate = keyframes`
   25% { opacity: 0; top: -50px; }
   80% { opacity: 0; }
   100% { opacity: 0; }
-`;
+`
 
 const Words = styled.div`
   overflow: hidden;
@@ -131,10 +131,10 @@ const Words = styled.div`
     animation-delay: 12s;
     opacity: 0;
   }
-`;
+`
 
 export function Loader(props: LoadingDotsProps) {
-  const { productTitle, wordsWidth } = props;
+  const { productTitle, wordsWidth } = props
   return (
     <>
       <LoaderContainer>
@@ -163,5 +163,5 @@ export function Loader(props: LoadingDotsProps) {
         </Wrapper>
       )}
     </>
-  );
+  )
 }

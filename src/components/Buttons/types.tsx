@@ -1,40 +1,40 @@
-import React from "react";
+import React from "react"
 
-type ButtonType = "primary" | "secondary" | "simple";
+type ButtonType = "primary" | "secondary" | "simple"
 export interface ButtonProps {
-  onClick?: () => void;
-  fontFamily?: string;
-  borderRadius?: number;
-  color?: string;
-  theme?: any;
-  backgroundColor?: string;
-  padding?: string;
-  borderColor?: string;
-  borderSize?: number;
-  children: any;
+  onClick?: () => void
+  fontFamily?: string
+  borderRadius?: number
+  color?: string
+  theme?: any
+  backgroundColor?: string
+  padding?: string
+  borderColor?: string
+  borderSize?: number
+  children: any
 }
 
 export interface LoginButtonProps {
-  children: any;
-  height?: number;
-  isMetaMask?: boolean;
-  isWalletConnect?: boolean;
-  onClick: () => void;
+  children: any
+  height?: number
+  isMetaMask?: boolean
+  isWalletConnect?: boolean
+  onClick: () => void
 }
 
 export interface MenuButtonProps {
-  height?: number;
+  height?: number
 }
 
 export interface LoadingDotsProps {
-  buttonType: ButtonType;
-  loadingColor?: string;
+  buttonType: ButtonType
+  loadingColor?: string
 }
 
 export interface DotProps {
-  buttonType: ButtonType;
-  color?: string;
-  delay: string;
+  buttonType: ButtonType
+  color?: string
+  delay: string
 }
 
 export const MetaMask = () => {
@@ -250,8 +250,8 @@ export const MetaMask = () => {
         strokeLinejoin="round"
       />
     </svg>
-  );
-};
+  )
+}
 
 export const WalletConnect = () => {
   return (
@@ -267,5 +267,5 @@ export const WalletConnect = () => {
         fill="#3B99FC"
       />
     </svg>
-  );
-};
+  )
+}

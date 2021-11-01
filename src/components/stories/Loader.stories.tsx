@@ -1,7 +1,7 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Loader } from "../Loader";
+import { Loader } from "../Loader"
 
 export default {
   title: "Components/Loader",
@@ -12,15 +12,15 @@ export default {
       control: { type: "radio" },
     },
   },
-} as ComponentMeta<typeof Loader>;
+} as ComponentMeta<typeof Loader>
 
-const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
+const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}
 
-export const WithText = Template.bind({});
+export const WithText = Template.bind({})
 WithText.args = {
   productTitle: "Parity",
   wordsWidth: 180,
-};
+}
