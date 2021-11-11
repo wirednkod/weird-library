@@ -19,5 +19,5 @@ export const Default = Template.bind({})
 Default.args = {
   size: "130px",
   active: true,
-  network: "kusama",
+  network: "polkadot",
 }
