@@ -6,7 +6,7 @@ import {
   ButtonProps,
   DotProps,
   LoginButtonProps,
-  MenuButtonProps
+  MenuButtonProps,
 } from "./types"
 
 import { mergeTheme, parseDynThemeJson } from "../../utils"
@@ -15,9 +15,11 @@ export const Button = styled.button<ButtonProps>`
   ${(props) => {
     const theme = mergeTheme(props)
     const { button } = theme
-    parseDynThemeJson(props, 'button')
+    parseDynThemeJson(props, "button")
     return `
-  font-family: ${props.fontFamily || theme.fontFamily || `'Poppins', sans-serif`};
+  font-family: ${
+    props.fontFamily || theme.fontFamily || `'Poppins', sans-serif`
+  };
   font-weight: ${props.fontWeight || theme.fontWeight || "900"};
   font-size: ${props.fontSize || theme.fontSize || "14"}px;
   border: ${props.borderSize || theme.button}px solid ${button.borderColor};
@@ -105,11 +107,7 @@ export function LoadingDots(props: LoadingDotsProps) {
   )
 }
 
-export function LoginButton({
-  children,
-  height,
-  onClick,
-}: LoginButtonProps) {
+export function LoginButton({ children, height, onClick }: LoginButtonProps) {
   return (
     <MenuButton height={height || 40} onClick={onClick}>
       <p>{children}</p>

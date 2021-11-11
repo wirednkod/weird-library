@@ -34,9 +34,13 @@ const isObject = (item: any) => {
   return item && typeof item === "object" && !Array.isArray(item)
 }
 
-export const parseDynThemeJson = (props: any, comp: string, type = 'default') => {
+export const parseDynThemeJson = (
+  props: any,
+  comp: string,
+  type = "default",
+) => {
   const theme = mergeTheme(props)
-  console.log('theme', theme, comp)
-  console.log('get Keys', Object.keys(theme[comp]))
-  console.log('get Vals', Object.values(theme[comp]))
+  console.log("theme", theme, comp)
+  console.log("get Keys", Object.keys(theme[comp]))
+  console.log("get Vals", Object.values(theme[comp]))
 }
