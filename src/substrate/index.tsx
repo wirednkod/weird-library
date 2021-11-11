@@ -1,4 +1,5 @@
 import { NetworkConnectionStatus } from "./NetworkConnectionStatus"
+import { NetworkIcon } from "./NetworkIcon"
 import { Tooltip } from "./Tooltip"
 
-export { Tooltip, NetworkConnectionStatus }
+export { NetworkConnectionStatus, NetworkIcon, Tooltip }
