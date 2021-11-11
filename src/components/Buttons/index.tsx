@@ -6,27 +6,26 @@ import {
   ButtonProps,
   DotProps,
   LoginButtonProps,
-  MenuButtonProps,
-  MetaMask,
-  WalletConnect,
+  MenuButtonProps
 } from "./types"
 
-import { getTheme } from "../../utils"
+import { mergeTheme, parseDynThemeJson } from "../../utils"
 
 export const Button = styled.button<ButtonProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { button } = theme
+    parseDynThemeJson(props, 'button')
     return `
-  font-family: ${theme.fontFamily || `'Poppins', sans-serif`};
-  font-weight: ${theme.fontWeight || "500"};
-  font-size: ${theme.fontSize || "14"}px;
-  border: ${button.default.borderSize}px solid ${button.default.borderColor};
+  font-family: ${props.fontFamily || theme.fontFamily || `'Poppins', sans-serif`};
+  font-weight: ${props.fontWeight || theme.fontWeight || "900"};
+  font-size: ${props.fontSize || theme.fontSize || "14"}px;
+  border: ${props.borderSize || theme.button}px solid ${button.borderColor};
   display: flex;
-  background: ${button.default.background};
-  color: ${button.default.color};
+  background: ${button.background};
+  color: ${button.color};
   padding: ${button.padding.normal};
-  border-radius: ${button.default.borderRadius}px;
+  border-radius: ${button.borderRadius}px;
   &:hover:not([disabled]) {
     cursor: pointer;
   }
@@ -69,7 +68,7 @@ const DotWrapper = styled.div`
 
 const Dot = styled.div<DotProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { button } = theme
     return `
     background-color: ${button[props.buttonType].color};
@@ -108,15 +107,11 @@ export function LoadingDots(props: LoadingDotsProps) {
 
 export function LoginButton({
   children,
-  isMetaMask,
-  isWalletConnect,
   height,
   onClick,
 }: LoginButtonProps) {
   return (
     <MenuButton height={height || 40} onClick={onClick}>
-      {isMetaMask && <MetaMask />}
-      {isWalletConnect && <WalletConnect />}
       <p>{children}</p>
     </MenuButton>
   )

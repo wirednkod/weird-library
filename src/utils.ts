@@ -25,11 +25,18 @@ const mergeDeep: any = (target: any, ...sources: any) => {
 }
 
 // public
-export const getTheme = (props: any) => mergeDeep(componentTheme, props.theme)
+export const mergeTheme = (props: any) => mergeDeep(componentTheme, props.theme)
 
 export const isEmpty = (obj: object) =>
   obj && Object.keys(obj).length === 0 && obj.constructor === Object
 
 const isObject = (item: any) => {
   return item && typeof item === "object" && !Array.isArray(item)
+}
+
+export const parseDynThemeJson = (props: any, comp: string, type = 'default') => {
+  const theme = mergeTheme(props)
+  console.log('theme', theme, comp)
+  console.log('get Keys', Object.keys(theme[comp]))
+  console.log('get Vals', Object.values(theme[comp]))
 }

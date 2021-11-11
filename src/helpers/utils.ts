@@ -62,10 +62,10 @@ const alphaFloats = new RegExp(
 )
 const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$")
 
-export function evalUnits(
+export const evalUnits = (
   input: string,
   chainDecimals: number,
-): [number | null, string] {
+): [number | null, string] => {
   //sanitize input to remove + char if exists
   input = input && input.replace("+", "")
   if (
@@ -108,12 +108,12 @@ export function evalUnits(
   return [numeric, EvalMessages.SUCCESS]
 }
 
-export function transformToBaseUnit(
+export const transformToBaseUnit = (
   estFee: string,
   chainDecimals: number,
   returnType?: "number" | "string",
   decAmount?: number,
-): string | number {
+): string | number => {
   const t = estFee.length - chainDecimals
   let s = ""
   // if chainDecimals are more than the estFee length

@@ -6,6 +6,66 @@
     "small": "12px",
     "h5": "28px"
   },
+  "button": {
+    "color": "#000",
+    "background": "#fff",
+    "borderColor": "#000",
+    "border": "1",
+    "borderRadius": "0",
+    "hoverColor": "#eee",
+    "hoverbackground": "#000",
+    "hoverBorderColor": "#000",
+    "disabledColor": "#999",
+    "disabledBackground": "#ccc",
+    "disabledBorderColor": "#ccc",
+    "padding": {
+      "normal": "12px 24px",
+      "small": "10px 16px"
+    },
+    "minHeight": {
+      "normal": "48px",
+      "small": "40px"
+    },
+    "primary": {
+      "color": "#28262C",
+      "background": "#E2665C",
+      "borderColor": "#E2665C",
+      "border": "0",
+      "borderRadius": "0",
+      "hoverColor": "#28262C",
+      "hoverbackground": "#D94F49",
+      "hoverBorderColor": "#D94F49",
+      "disabledColor": "#28262C",
+      "disabledBackground": "#404040",
+      "disabledBorderColor": "#404040"
+    },
+    "secondary": {
+      "color": "#E2665C",
+      "background": "rgba(226, 102, 92, 0.2)",
+      "borderColor": "rgba(226, 102, 92, 0.2)",
+      "border": "0",
+      "borderRadius": "0",
+      "hoverColor": "#E2665C",
+      "hoverbackground": "rgba(226, 102, 92, 0.6)",
+      "hoverBorderColor": "rgba(226, 102, 92, 0.6)",
+      "disabledColor": "#28262C",
+      "disabledBackground": "#404040",
+      "disabledBorderColor": "#404040"
+    },
+    "simple": {
+      "color": "#E2665C",
+      "background": "transparent",
+      "borderColor": "transparent",
+      "border": "0",
+      "borderRadius": "0",
+      "hoverColor": "#FFF",
+      "hoverbackground": "transparent",
+      "hoverBorderColor": "transparent",
+      "disabledColor": "#404040",
+      "disabledBackground": "transparent",
+      "disabledBorderColor": "transparent"
+    }
+  },
   "loader": {
     "background": "#E2665C",
     "dotSize": "5px",
@@ -114,64 +174,6 @@
     "white": {
       "background": "rgba(255, 255, 255, .1)",
       "color": "rgba(255, 255, 255, 1)"
-    }
-  },
-  "button": {
-    "borderRadius": "0",
-    "justifyContent": "center",
-    "padding": {
-      "normal": "12px 24px",
-      "small": "10px 16px"
-    },
-    "minHeight": {
-      "normal": "48px",
-      "small": "40px"
-    },
-    "default": {
-      "color": "#000",
-      "background": "#FFF",
-      "borderColor": "#000",
-      "border": "1",
-      "borderRadius": "0"
-    },
-    "primary": {
-      "color": "#28262C",
-      "background": "#E2665C",
-      "borderColor": "#E2665C",
-      "border": "0",
-      "borderRadius": "0",
-      "hoverColor": "#28262C",
-      "hoverbackground": "#D94F49",
-      "hoverBorderColor": "#D94F49",
-      "disabledColor": "#28262C",
-      "disabledBackground": "#404040",
-      "disabledBorderColor": "#404040"
-    },
-    "secondary": {
-      "color": "#E2665C",
-      "background": "rgba(226, 102, 92, 0.2)",
-      "borderColor": "rgba(226, 102, 92, 0.2)",
-      "border": "0",
-      "borderRadius": "0",
-      "hoverColor": "#E2665C",
-      "hoverbackground": "rgba(226, 102, 92, 0.6)",
-      "hoverBorderColor": "rgba(226, 102, 92, 0.6)",
-      "disabledColor": "#28262C",
-      "disabledBackground": "#404040",
-      "disabledBorderColor": "#404040"
-    },
-    "simple": {
-      "color": "#E2665C",
-      "background": "transparent",
-      "borderColor": "transparent",
-      "border": "0",
-      "borderRadius": "0",
-      "hoverColor": "#FFF",
-      "hoverbackground": "transparent",
-      "hoverBorderColor": "transparent",
-      "disabledColor": "#404040",
-      "disabledBackground": "transparent",
-      "disabledBorderColor": "transparent"
     }
   },
   "tabs": {
