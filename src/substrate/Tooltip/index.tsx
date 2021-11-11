@@ -1,8 +1,8 @@
 import React from "react"
-// import { getTheme } from '../../utils'
 
 import styled from "styled-components"
 import { TooltipProps, TooltipTextProps, TooltipCompProps } from "./types"
+import { NetworkConnectionStatus } from ".."
 
 const ToolTipText = styled.span<TooltipTextProps>`
   ${(props) => {
@@ -21,7 +21,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
         beforeOrAfter = "after"
         arrowPositonColors =
           "transparent transparent transparent rgba(0, 0, 0, 0.8)"
-        arrowPosition = "right: -14%;"
+        arrowPosition = "right: -9%;"
         break
       case "leftBottom":
         where = "top: 3%;"
@@ -30,7 +30,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
         beforeOrAfter = "after"
         arrowPositonColors =
           "transparent transparent transparent rgba(0, 0, 0, 0.8)"
-        arrowPosition = "right: -14%;"
+        arrowPosition = "right: -9%;"
         break
       case "left":
         where = "top: 40%;"
@@ -39,7 +39,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
         beforeOrAfter = "after"
         arrowPositonColors =
           "transparent transparent transparent rgba(0, 0, 0, 0.8)"
-        arrowPosition = "right: -14%;"
+        arrowPosition = "right: -9%;"
         break
       case "topLeft":
         where = "top: 100%;"
@@ -53,7 +53,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
       case "top":
         where = "top: 100%;"
         bubblePush = "bottom: 120%;"
-        bubblePosition = "left: 45%;"
+        bubblePosition = "left: 15%;"
         beforeOrAfter = "after"
         arrowPositonColors =
           "rgba(0, 0, 0, 0.8) transparent transparent transparent"
@@ -71,29 +71,29 @@ const ToolTipText = styled.span<TooltipTextProps>`
       case "rightTop":
         where = "top: 70%;"
         bubblePush = "top: -100%;"
-        bubblePosition = "right: -110%;"
+        bubblePosition = "right: -165%;"
         beforeOrAfter = "after"
         arrowPositonColors =
           "transparent rgba(0, 0, 0, 0.8) transparent transparent"
-        arrowPosition = "left: -14%;"
+        arrowPosition = "left: -9%;"
         break
       case "right":
         where = "top: 40%;"
         bubblePush = "top: -10%;"
-        bubblePosition = "right: -110%;"
+        bubblePosition = "right: -165%;"
         beforeOrAfter = "after"
         arrowPositonColors =
           "transparent rgba(0, 0, 0, 0.8) transparent transparent"
-        arrowPosition = "left: -14%;"
+        arrowPosition = "left: -9%;"
         break
       case "rightBottom":
         where = "top: 3%;"
         bubblePush = "top: 70%;"
-        bubblePosition = "right: -110%;"
+        bubblePosition = "right: -165%;"
         beforeOrAfter = "after"
         arrowPositonColors =
           "transparent rgba(0, 0, 0, 0.8) transparent transparent"
-        arrowPosition = "left: -14%;"
+        arrowPosition = "left: -9%;"
         break
       case "bottomRight":
         where = "bottom: 100%;"
@@ -107,7 +107,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
       case "bottom":
         where = "bottom: 100%;"
         bubblePush = "top: 120%;"
-        bubblePosition = "left: 45%;"
+        bubblePosition = "left: 15%;"
         beforeOrAfter = "before"
         arrowPositonColors =
           "transparent transparent rgba(0, 0, 0, 0.8) transparent"
@@ -125,15 +125,18 @@ const ToolTipText = styled.span<TooltipTextProps>`
       default:
         where = "top: 100%;"
         bubblePush = "bottom: 120%;"
-        bubblePosition = "left: 45%;"
+        bubblePosition = "left: 15%;"
         beforeOrAfter = "after"
         arrowPositonColors =
           "rgba(0, 0, 0, 0.8) transparent transparent transparent"
         arrowPosition = "left: 45%;"
     }
     return `
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
     visibility: hidden;
-    width: 120px;
+    width: 200px;
     background-color: transparent;
     color: transparent;
     text-align: center;
@@ -144,9 +147,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
     ${bubblePush}
     ${bubblePosition}
     margin-left: -60px;
-    // transition: all 0.3s ease;
     &:${beforeOrAfter} {
-      // transition: all 0.3s ease;
       content: '';
       position: absolute;
       ${where}
@@ -157,6 +158,10 @@ const ToolTipText = styled.span<TooltipTextProps>`
     }
 `
   }}
+`
+
+const Title = styled.div`
+  font-size: 1.2rem;
 `
 
 const ToolTip = styled.div<TooltipProps>`
@@ -195,15 +200,33 @@ const ToolTip = styled.div<TooltipProps>`
   }}
 `
 
+const NetworkContent = styled.div`
+  width: 20px;
+  height: auto;
+  display: flex;
+  align-self: center;
+`
+
+const TextContent = styled.div``
+
 export const Tooltip = ({
   children,
+  title,
   text,
   placement = "top",
 }: TooltipCompProps) => {
   return (
     <ToolTip placement={placement}>
       {children}
-      <ToolTipText placement={placement}>{text}</ToolTipText>
+      <ToolTipText placement={placement}>
+        <NetworkContent>
+          <NetworkConnectionStatus size="small" />
+        </NetworkContent>
+        <TextContent>
+          {<Title>{title}</Title>}
+          {text}
+        </TextContent>
+      </ToolTipText>
     </ToolTip>
   )
 }

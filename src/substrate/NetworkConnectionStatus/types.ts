@@ -1,6 +1,6 @@
 export interface Props {
-  size: SizeType
-  status: StatusType
+  size?: SizeType
+  status?: StatusType
   type?: ChainType
 }
 

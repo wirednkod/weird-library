@@ -14,6 +14,7 @@ type PositionType =
 
 export interface TooltipCompProps {
   children: any
+  title?: string
   text: string
   placement: PositionType
 }

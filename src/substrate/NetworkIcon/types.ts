@@ -6,6 +6,7 @@ export interface Props {
     | "kulupu"
     | "rococo"
     | "substrate"
-  size?: string
-  active: boolean
+  size: number
+  active?: boolean
+  showName?: boolean
 }

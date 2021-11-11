@@ -138,3 +138,7 @@ export const transformToBaseUnit = (
   }
   return parseFloat(fin).toFixed(decAmount && decAmount >= 0 ? decAmount : 4)
 }
+
+export const capitalize = (str: string): string => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}

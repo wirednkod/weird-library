@@ -15,9 +15,9 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
       <div
         style={{
           width: "100px",
-          border: "1px solid blue",
+          border: "1px solid red",
           padding: "20px",
-          color: "blue",
+          color: "red",
           display: "block",
           float: "left",
         }}
@@ -30,6 +30,7 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  text: "This is the text of the Tooltip that will popup",
-  placement: "top",
+  title: "Network is syncing",
+  text: "#9872342947529345023",
+  placement: "bottom",
 }
