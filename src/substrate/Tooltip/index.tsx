@@ -162,6 +162,13 @@ const ToolTipText = styled.span<TooltipTextProps>`
 
 const Title = styled.div`
   font-size: 1.2rem;
+  text-align: justify;
+`
+
+const Desc = styled.div`
+  font-size: 0.8rem;
+  text-align: justify;
+  color: #ccc;
 `
 
 const ToolTip = styled.div<TooltipProps>`
@@ -207,24 +214,33 @@ const NetworkContent = styled.div`
   align-self: center;
 `
 
-const TextContent = styled.div``
+const TextContent = styled.div`
+  align-self: center;
+`
 
 export const Tooltip = ({
   children,
   title,
   text,
   placement = "top",
+  network,
 }: TooltipCompProps) => {
   return (
     <ToolTip placement={placement}>
       {children}
       <ToolTipText placement={placement}>
-        <NetworkContent>
-          <NetworkConnectionStatus size="small" />
-        </NetworkContent>
+        {network && (
+          <NetworkContent>
+            <NetworkConnectionStatus
+              size={network.size}
+              status={network.status}
+              type={network.type}
+            />
+          </NetworkContent>
+        )}
         <TextContent>
-          {<Title>{title}</Title>}
-          {text}
+          {title && <Title>{title}</Title>}
+          {text && <Desc>{text}</Desc>}
         </TextContent>
       </ToolTipText>
     </ToolTip>

@@ -34,3 +34,27 @@ Default.args = {
   text: "#9872342947529345023",
   placement: "bottom",
 }
+
+export const DefaultWithNetwork = Template.bind({})
+DefaultWithNetwork.args = {
+  title: "Network is syncing",
+  text: "#9872342947529345023",
+  placement: "left",
+  network: {
+    size: "small",
+    status: "connected",
+    type: "relay",
+  },
+}
+
+export const DefaultWithNetworkParachain = Template.bind({})
+DefaultWithNetworkParachain.args = {
+  title: "Network is connecting",
+  text: "#9872342947529345023",
+  placement: "left",
+  network: {
+    size: "small",
+    status: "connecting",
+    type: "para",
+  },
+}

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react"
 import styled from "styled-components"
-import { Props, SizeType, StatusType } from "./types"
+import { NetworkConnectionProps, SizeType, StatusType } from "./types"
 
 const getSize = (size: SizeType): string => {
   switch (size) {
@@ -24,7 +24,7 @@ const getStatus = (status: StatusType): string => {
   }
 }
 
-const SCircle = styled.div(({ size, status }: Props): any => {
+const SCircle = styled.div(({ size, status }: NetworkConnectionProps): any => {
   const sizePixels = getSize(size)
   const statusColor = getStatus(status)
   return {
@@ -35,32 +35,35 @@ const SCircle = styled.div(({ size, status }: Props): any => {
   }
 })
 
-const SCircleParachain = styled.div(({ size, status }: Props): any => {
-  const sizePixels = getSize(size)
-  const statusColor = getStatus(status)
-  const borderSize = size === "small" ? "1.5" : size === "medium" ? "2" : "3"
-  return {
-    width: parseFloat(sizePixels) / 3,
-    height: (parseFloat(sizePixels) / 3) * 2,
-    borderBottomRightRadius: sizePixels,
-    borderTopRightRadius: sizePixels,
-    borderColor: statusColor,
-    background: "transparent",
-    border: borderSize + "px solid " + statusColor,
-    position: "relative",
-    borderLeft: "0px",
-  }
-})
+const SCircleParachain = styled.div(
+  ({ size, status }: NetworkConnectionProps): any => {
+    const sizePixels = getSize(size)
+    const statusColor = getStatus(status)
+    const borderSize = size === "small" ? "1.5" : size === "medium" ? "2" : "3"
+    return {
+      width: parseFloat(sizePixels) / 3,
+      height: (parseFloat(sizePixels) / 3) * 2,
+      borderBottomRightRadius: sizePixels,
+      borderTopRightRadius: sizePixels,
+      borderColor: statusColor,
+      background: "transparent",
+      border: borderSize + "px solid " + statusColor,
+      position: "relative",
+      borderLeft: "0px",
+    }
+  },
+)
 
-export const NetworkConnectionStatus: FunctionComponent<Props> = ({
-  size = "medium",
-  status = "connected",
-  type = "relay",
-}: Props) => {
-  return (
-    <div style={{ display: "flex" }}>
-      <SCircle {...{ size, status }} />
-      {type === "para" && <SCircleParachain {...{ size, status }} />}
-    </div>
-  )
-}
+export const NetworkConnectionStatus: FunctionComponent<NetworkConnectionProps> =
+  ({
+    size = "medium",
+    status = "connected",
+    type = "relay",
+  }: NetworkConnectionProps) => {
+    return (
+      <div style={{ display: "flex" }}>
+        <SCircle {...{ size, status }} />
+        {type === "para" && <SCircleParachain {...{ size, status }} />}
+      </div>
+    )
+  }

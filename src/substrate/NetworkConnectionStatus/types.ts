@@ -1,6 +1,6 @@
-export interface Props {
-  size?: SizeType
-  status?: StatusType
+export interface NetworkConnectionProps {
+  size: SizeType
+  status: StatusType
   type?: ChainType
 }
 

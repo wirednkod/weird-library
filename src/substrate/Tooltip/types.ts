@@ -1,3 +1,5 @@
+import { NetworkConnectionProps } from "../NetworkConnectionStatus/types"
+
 type PositionType =
   | "topLeft"
   | "top"
@@ -17,6 +19,7 @@ export interface TooltipCompProps {
   title?: string
   text: string
   placement: PositionType
+  network?: NetworkConnectionProps
 }
 
 export interface TooltipTextProps {
