@@ -1,24 +1,15 @@
 import React, { FunctionComponent } from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { Props, SizeType, StatusType } from "./types"
-
-const pulse = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
 
 const getSize = (size: SizeType): string => {
   switch (size) {
     case "small":
-      return "5px"
-    case "medium":
       return "10px"
-    case "large":
+    case "medium":
       return "15px"
+    case "large":
+      return "20px"
   }
 }
 
@@ -47,7 +38,7 @@ const SCircle = styled.div(({ size, status }: Props): any => {
 const SCircleParachain = styled.div(({ size, status }: Props): any => {
   const sizePixels = getSize(size)
   const statusColor = getStatus(status)
-  const borderSize = size === "small" ? "0.7" : size === "medium" ? "1.5" : "2"
+  const borderSize = size === "small" ? "1.5" : size === "medium" ? "2" : "3"
   return {
     width: parseFloat(sizePixels) / 3,
     height: (parseFloat(sizePixels) / 3) * 2,
