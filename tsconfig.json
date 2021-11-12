@@ -4,6 +4,7 @@
     "module": "es2015", // "es2015" makes Typescript compiler output compatible with Rollup
     "jsx": "react",
     "declaration": true,
+    "declarationDir": "dist",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -16,5 +17,11 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "src/stories/*", "src/components/stories/*"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/stories/*",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx"
+  ]
 }

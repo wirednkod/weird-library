@@ -1,12 +1,22 @@
 {
-  "name": "susbtrate-react-library",
-  "version": "0.0.2",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "name": "weird-library",
+  "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wirednkod/weird-library.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.14.8",
+    "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-url": "^6.1.0",
     "@storybook/addon-actions": "^6.4.0-alpha.20",
     "@storybook/addon-essentials": "^6.4.0-alpha.20",
     "@storybook/addon-links": "^6.4.0-alpha.20",
@@ -29,15 +39,16 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.58.3",
+    "rollup": "^2.60.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
     "styled-components": "^4.4.1",
     "tsc-watch": "^4.4.0",
     "typescript": "^4.3.5"
   },
   "scripts": {
-    "clean": "rm -rf dist/* && rm -rf node_modules",
-    "build": "npm run clean && rollup -c --mini",
+    "clean": "rm -rf dist/*",
+    "build": "npm run clean && rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "format": "prettier --write ."
@@ -46,9 +57,6 @@
     "react": ">= 16.8.0",
     "react-dom": ">= 16.8.0"
   },
-  "files": [
-    "lib/"
-  ],
   "dependencies": {
     "cross-env": "^7.0.3",
     "styled-components": "^4.4.1",

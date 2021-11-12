@@ -1,34 +1,32 @@
+import peerDepsExternal from "rollup-plugin-peer-deps-external"
+import resolve from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-commonjs"
 import typescript from "rollup-plugin-typescript2"
 import json from "@rollup/plugin-json"
-import pkg from "./package.json"
+import url from "@rollup/plugin-url"
 
-const extensions = [".js", ".jsx", ".ts", ".tsx"]
-const input = "src/index.tsx"
+const packageJson = require("./package.json")
 
-const plugins = [
-  typescript({
-    typescript: require("typescript"),
-  }),
-  json(),
-]
-
-export default [
-  {
-    input,
-    output: {
-      file: pkg.module,
-      format: "esm",
-      sourcemap: true,
-    },
-    plugins,
-  },
-  {
-    input,
-    output: {
-      file: pkg.main,
+export default {
+  input: "src/index.ts",
+  output: [
+    {
+      file: packageJson.main,
       format: "cjs",
       sourcemap: true,
     },
-    plugins,
-  },
-]
+    {
+      file: packageJson.module,
+      format: "esm",
+      sourcemap: true,
+    },
+  ],
+  plugins: [
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    typescript({ useTsconfigDeclarationDir: true }),
+    json(),
+    url({ include: ["**/*.woff", "**/*.woff2", "**/*.otf"] }),
+  ],
+}
