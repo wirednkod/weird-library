@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import styled, { css } from "styled-components"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 import {
   SliderProps,
   SliderInputProps,
@@ -23,7 +23,7 @@ const appearanceNone = css`
 
 const SliderInput = styled.input<SliderInputProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { slider } = theme
 
     return `
@@ -210,7 +210,7 @@ const MinMaxContainer = styled.div`
 `
 const Option = styled.div<OptionProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { slider } = theme
     return `
       position: absolute;

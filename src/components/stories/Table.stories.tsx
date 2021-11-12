@@ -1,7 +1,7 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import styled from "styled-components"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 import { Table } from "../Table"
 import { Button } from "../Buttons"
@@ -14,7 +14,7 @@ export default {
 
 const Paragraph = styled.p`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { fontFamily } = theme
     return `
       color: #D6D6D6;

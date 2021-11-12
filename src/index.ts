@@ -14,11 +14,10 @@ import {
   Table,
   Tabs,
   Modal,
-  Tooltip,
 } from "./components"
 
-// substrate
-import { NetworkConnectionStatus } from "./substrate"
+// weird Library
+import { NetworkConnectionStatus, NetworkIcon, Tooltip } from "./weird"
 
 // hooks
 import { useClickedOutside } from "./hooks"
@@ -43,6 +42,9 @@ export {
   Slider,
   Table,
   Tabs,
+  // weird
+  NetworkConnectionStatus,
+  NetworkIcon,
   Tooltip,
   // hooks
   useClickedOutside,

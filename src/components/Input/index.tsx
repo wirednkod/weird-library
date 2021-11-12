@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 import { InputProps } from "./types"
 
 export const InputWrapper = styled.div`
@@ -10,7 +10,7 @@ export const InputWrapper = styled.div`
 `
 export const InputElement = styled.input<InputProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { input } = theme
     return `
         font-size: ${props.large ? input.fontSizeLarge : input.fontSize};
@@ -32,7 +32,7 @@ export const InputElement = styled.input<InputProps>`
 
 export const ErrorParagraph = styled.p`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { input } = theme
     return `
         font-size: ${input.fontSizeSmall};
@@ -45,7 +45,7 @@ export const ErrorParagraph = styled.p`
 `
 export const InputContainer = styled.div<InputProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { input } = theme
     return `
       display: flex;

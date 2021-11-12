@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { TableHeadProps, TableHeadItemProps } from "./types"
 
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 export const TableHeadWrapper = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ export const TableHeadItem = styled.div<TableHeadItemProps>`
 `
 export const TableHeadParagraph = styled.p`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { fontFamily } = theme
     return `
       color: #838383;

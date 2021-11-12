@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 import { SelectorProps, SelectorItemProps } from "./types"
 
 export const SelectorWrapper = styled.ul`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { selector } = theme
     return `
         margin: 0px;
@@ -26,7 +26,7 @@ export const SelectorWrapper = styled.ul`
 `
 export const SelectorItem = styled.li<SelectorItemProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { selector } = theme
 
     return `

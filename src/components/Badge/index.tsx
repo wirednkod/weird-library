@@ -1,12 +1,12 @@
 import React from "react"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 import styled from "styled-components"
 import { BadgeProps } from "./types"
 
 export const BadgeWrapper = styled.div<BadgeProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { badge } = theme
 
     return `
@@ -39,7 +39,7 @@ export const BadgeWrapper = styled.div<BadgeProps>`
 
 export const BadgeParagraph = styled.p<BadgeProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { badge } = theme
     return `
         margin: 0px;

@@ -1,5 +1,5 @@
 import React from "react"
-// import { getTheme } from '../../utils'
+// import { mergeTheme } from '../../utils'
 
 import styled from "styled-components"
 import { TooltipProps, TooltipTextProps, TooltipCompProps } from "./types"

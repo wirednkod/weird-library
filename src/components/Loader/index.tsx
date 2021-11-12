@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 
 import { LoadingDotsProps, DotProps, WordsProps } from "./types"
 
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 const BounceAnimation = keyframes`
   0% { transform: scale(0.1, 0.1) }
@@ -18,7 +18,7 @@ const DotWrapper = styled.div`
 
 const Dot = styled.div<DotProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const {
       loader: { background, dotSize },
     } = theme
@@ -26,7 +26,7 @@ const Dot = styled.div<DotProps>`
       background-color: ${background};
       border-radius: 50%;
       width: ${dotSize};
-      height: ${dotSize}; 
+      height: ${dotSize};
       margin: 0 5px;
     `
   }}
@@ -57,7 +57,7 @@ const Wrapper = styled.section`
 
 const Sentence = styled.div<WordsProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const {
       loader: {
         loadingText: { fontFamily, fontSize, color },

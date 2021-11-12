@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 import { TabProps, TabsProps } from "./types"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 export const TabItem = styled.li<TabProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { fontSize, tabs } = theme
     return `
         font-family: ${theme.fontFamily || `'Poppins', sans-serif`};
@@ -30,7 +30,7 @@ export const TabItem = styled.li<TabProps>`
 `
 export const TabsList = styled.ul`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { tabs } = theme
     return `
     padding: 0px;

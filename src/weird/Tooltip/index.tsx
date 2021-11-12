@@ -171,7 +171,7 @@ const Desc = styled.div`
   color: #ccc;
 `
 
-const ToolTip = styled.div<TooltipProps>`
+const ToolTipComponent = styled.div<TooltipProps>`
   ${(props) => {
     let arrowPositonColors
     switch (props.placement) {
@@ -226,7 +226,7 @@ export const Tooltip = ({
   network,
 }: TooltipCompProps) => {
   return (
-    <ToolTip placement={placement}>
+    <ToolTipComponent placement={placement}>
       {children}
       <ToolTipText placement={placement}>
         {network && (
@@ -243,6 +243,6 @@ export const Tooltip = ({
           {text && <Desc>{text}</Desc>}
         </TextContent>
       </ToolTipText>
-    </ToolTip>
+    </ToolTipComponent>
   )
 }

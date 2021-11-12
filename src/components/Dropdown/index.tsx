@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { getTheme, isEmpty } from "../../utils"
+import { mergeTheme, isEmpty } from "../../utils"
 
 import styled from "styled-components"
 import useClickedOutside from "../../hooks/useClickedOutside"
@@ -21,7 +21,7 @@ const DropDownContainer = styled.div`
 
 const DropDownHeader = styled.div<DropDownHeaderProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const {
       dropdown: {
         disabled,
@@ -50,7 +50,7 @@ const DropDownHeader = styled.div<DropDownHeaderProps>`
 
 const ListItem = styled.div<ListItemProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const {
       dropdown: { header, item },
     } = theme
@@ -90,7 +90,7 @@ const ListItemTexts = styled.div`
 
 const ItemsContainer = styled.div`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const {
       dropdown: {
         width,

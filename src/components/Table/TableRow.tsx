@@ -6,7 +6,7 @@ import {
   TableRowWraperProps,
   TableRowProps,
 } from "./types"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 export const TableRowItem = styled.div<TableHeadItemProps>`
   ${(props) => {
@@ -37,7 +37,7 @@ export const TableRowItem = styled.div<TableHeadItemProps>`
 `
 export const TableRowWrapper = styled.div<TableRowWraperProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { table } = theme
     return `
       display: flex;

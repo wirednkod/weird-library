@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 import { NotificationDivProps, NotificationProps } from "./types"
 
 export const NotificationWrapper = styled.div<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { notification } = theme
 
     return `
@@ -63,7 +63,7 @@ export const NotificationWrapper = styled.div<NotificationDivProps>`
 `
 export const IconWrapper = styled.div<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { notification } = theme
     return `
     display: flex;
@@ -92,7 +92,7 @@ export const NotificationContentWrapper = styled.div`
 `
 export const NotificationTitle = styled.h5<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { notification } = theme
     return `
         font-size: ${notification.fontSizeMedium};
@@ -109,7 +109,7 @@ export const NotificationTitle = styled.h5<NotificationDivProps>`
 `
 export const NotificationActionWrapper = styled.div<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { notification } = theme
     return `
       cursor: pointer;
@@ -131,7 +131,7 @@ export const NotificationActionWrapper = styled.div<NotificationDivProps>`
 `
 export const NotificationActionText = styled.p<NotificationDivProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { notification } = theme
     return `
       font-size: ${notification.fontSize};

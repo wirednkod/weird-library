@@ -1,5 +1,5 @@
 import React from "react"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 import styled from "styled-components"
 
@@ -11,7 +11,7 @@ import {
 
 export const EmptyStateWrapper = styled.div<EmptyStateWrapperProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { emptyState } = theme
     return `
       display: flex;
@@ -27,7 +27,7 @@ export const EmptyStateWrapper = styled.div<EmptyStateWrapperProps>`
 `
 export const EmptyStateParagraph = styled.p<EmptyStateParagraphProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { fontSize, emptyState } = theme
     return `
       font-size: ${fontSize.small};
@@ -43,7 +43,7 @@ export const EmptyStateParagraph = styled.p<EmptyStateParagraphProps>`
 `
 export const EmptyStateTitle = styled.h5`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { fontSize, emptyState } = theme
     return `
       font-size: ${fontSize.h5};

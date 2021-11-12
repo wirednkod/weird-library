@@ -1,11 +1,11 @@
 import React from "react"
-import { getTheme } from "../../utils"
+import { mergeTheme } from "../../utils"
 import { InputLabelProps } from "./types"
 import styled from "styled-components"
 
 export const InputLabelWrapper = styled.label`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { inputLabel } = theme
     return `
             display: flex;
@@ -16,7 +16,7 @@ export const InputLabelWrapper = styled.label`
 `
 export const InputLabelIconWrapper = styled.div<InputLabelProps>`
   ${(props) => {
-    const theme = getTheme(props)
+    const theme = mergeTheme(props)
     const { inputLabel } = theme
 
     return `

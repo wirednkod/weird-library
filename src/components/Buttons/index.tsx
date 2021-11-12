@@ -9,13 +9,12 @@ import {
   MenuButtonProps,
 } from "./types"
 
-import { mergeTheme, parseDynThemeJson } from "../../utils"
+import { mergeTheme } from "../../utils"
 
 export const Button = styled.button<ButtonProps>`
   ${(props) => {
     const theme = mergeTheme(props)
     const { button } = theme
-    parseDynThemeJson(props, "button")
     return `
   font-family: ${
     props.fontFamily || theme.fontFamily || `'Poppins', sans-serif`
