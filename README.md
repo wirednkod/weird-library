@@ -1,6 +1,6 @@
-# Components React Library
+# Weird Library
 
-A library containing common reusable components.
+A library containing common reusable components, hooks and utils related to polkadotJS api.
 
 ```
 npm i
@@ -19,12 +19,6 @@ class Example extends Component {
   }
 }
 ```
-
-## Themes
-
-The library is using a default theme.json that can be copied and replaced.
-
-The input `theme.json` (if has correct structure) will replace the default one. If value is not provided then the theme will fallback to default one
 
 ## Development ([Storybook](https://storybook.js.org/))
 
