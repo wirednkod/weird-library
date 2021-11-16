@@ -1,15 +1,15 @@
 import React, { FunctionComponent } from "react"
 import styled from "styled-components"
 import FontStyles from "./FontStyles"
-import { Props } from "./types"
+import { NetworkIconProps } from "./types"
 
-const Icon = styled.div<Props>`
+const Icon = styled.div<NetworkIconProps>`
   font-family: "Web3-Regular";
   font-size: ${(props) => props.size + props.size / 2}px;
   color: ${(props) => (props.active ? "#000" : "#ABB8BF")};
 `
 
-const NetworkName = styled.div<Props>`
+const NetworkName = styled.div<NetworkIconProps>`
   font-family: unset;
   font-size: ${(props) => props.size}px;
   color: ${(props) => (props.active ? "#000" : "#ABB8BF")};
@@ -17,12 +17,12 @@ const NetworkName = styled.div<Props>`
   text-transform: capitalize;
 `
 
-export const NetworkIcon: FunctionComponent<Props> = ({
-  network = "polkadot",
+export const NetworkIcon: FunctionComponent<NetworkIconProps> = ({
+  network,
   size,
   active,
   showName = true,
-}: Props) => {
+}: NetworkIconProps) => {
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       <FontStyles />

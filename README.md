@@ -3,7 +3,7 @@
 A library containing common reusable components, hooks and utils related to polkadotJS api.
 
 ```
-npm i
+npm i weird-library
 ```
 
 ## Usage

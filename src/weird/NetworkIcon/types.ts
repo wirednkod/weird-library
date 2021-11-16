@@ -1,4 +1,4 @@
-export interface Props {
+export interface NetworkIconProps {
   network?:
     | "polkadot"
     | "kusama"
