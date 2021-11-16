@@ -1,0 +1,47 @@
+------------------------------------------------------------------------------------------------
+
+https://css-tricks.com/theming-and-theme-switching-with-react-and-styled-components/
+
+------------------------------------------------------------------------------------------------
+
+Ideas from Harvey concerning themeing:
+
+https://github.com/HarveyD/react-component-library/tree/styled-components
+
+
+
+
+------------------------------------------------------------------------------------------------
+
+https://javascript.plainenglish.io/themes-within-themes-with-react-typescript-and-styled-components-e65491e45f5e
+
+//colors.ts
+const colors = {
+  primary: {
+    primary1: '#172121',
+    primary2: '#444554',
+    primary3: '#7F7B82',
+  },
+  secondary: {
+    secondary1: '#BFACB5',
+    secondary2: '#E5D0CC',
+  },
+  ...
+}
+
+
+// text.ts
+This is where we’re going to store all our text variables for the theme. This includes:
+- font families
+- sizes
+- letter spacing
+- font weight
+- line height
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------

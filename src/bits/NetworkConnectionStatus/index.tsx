@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react"
 import styled from "styled-components"
 import { NetworkConnectionProps, SizeType, StatusType } from "./types"
+import useTheme from "../../hooks/useTheme"
 
 const getSize = (size: SizeType): string => {
   switch (size) {
@@ -13,32 +14,36 @@ const getSize = (size: SizeType): string => {
   }
 }
 
-const getStatus = (status: StatusType): string => {
+const getStatus = (status: StatusType, theme: any): string => {
   switch (status) {
     case "connected":
-      return "#16DB9A"
+      return theme.light?.colors?.primary || "#000"
     case "connecting":
-      return "#FFFA02"
+      return theme.light?.colors?.secondary || "#fff"
     case "disconnected":
-      return "#C6D0D7"
+      return theme.light?.colors?.disabledColor || "#ccc"
   }
 }
 
-const SCircle = styled.div(({ size, status }: NetworkConnectionProps): any => {
-  const sizePixels = getSize(size)
-  const statusColor = getStatus(status)
-  return {
-    width: sizePixels,
-    height: sizePixels,
-    borderRadius: sizePixels,
-    backgroundColor: statusColor,
-  }
-})
+const SCircle = styled.div(
+  ({ size, status, theme }: NetworkConnectionProps): any => {
+    console.log("theeeee", theme)
+
+    const sizePixels = getSize(size)
+    const statusColor = getStatus(status, theme)
+    return {
+      width: sizePixels,
+      height: sizePixels,
+      borderRadius: sizePixels,
+      backgroundColor: statusColor,
+    }
+  },
+)
 
 const SCircleParachain = styled.div(
-  ({ size, status }: NetworkConnectionProps): any => {
+  ({ size, status, theme }: NetworkConnectionProps): any => {
     const sizePixels = getSize(size)
-    const statusColor = getStatus(status)
+    const statusColor = getStatus(status, theme)
     const borderSize = size === "small" ? "1.5" : size === "medium" ? "2" : "3"
     return {
       width: parseFloat(sizePixels) / 3,
@@ -59,11 +64,15 @@ export const NetworkConnectionStatus: FunctionComponent<NetworkConnectionProps> 
     size = "medium",
     status = "connected",
     type = "relay",
+    theme,
   }: NetworkConnectionProps) => {
+    const them = useTheme(theme)
     return (
       <div style={{ display: "flex" }}>
-        <SCircle {...{ size, status }} />
-        {type === "para" && <SCircleParachain {...{ size, status }} />}
+        <SCircle {...{ size, status }} theme={them} />
+        {type === "para" && (
+          <SCircleParachain {...{ size, status }} theme={them} />
+        )}
       </div>
     )
   }

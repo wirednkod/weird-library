@@ -1,6 +1,6 @@
 {
   "name": "weird-library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,6 +11,13 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "build": "npm run clean && rollup -c",
+    "storybook": "start-storybook --no-manager-cache -p 6006",
+    "build-storybook": "build-storybook",
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -45,13 +52,6 @@
     "styled-components": "^4.4.1",
     "tsc-watch": "^4.4.0",
     "typescript": "^4.3.5"
-  },
-  "scripts": {
-    "clean": "rm -rf dist/*",
-    "build": "npm run clean && rollup -c",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "format": "prettier --write ."
   },
   "peerDependencies": {
     "react": ">= 16.8.0",

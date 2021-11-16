@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { NetworkIcon } from ".."
+import { NetworkIcon } from "../bits"
 
 export default {
-  title: "Substrate/Network Icon",
+  title: "Bits/Network Icon",
   component: NetworkIcon,
   argTypes: {},
 } as ComponentMeta<typeof NetworkIcon>
