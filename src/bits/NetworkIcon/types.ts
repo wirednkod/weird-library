@@ -9,4 +9,5 @@ export interface NetworkIconProps {
   size: number
   active?: boolean
   showName?: boolean
+  theme?: any
 }

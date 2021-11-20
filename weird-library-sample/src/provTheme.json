@@ -1,0 +1,21 @@
+{
+  "font-size-base": "14px",
+  "light": {
+    "colors": {
+      "primary": "pink",
+      "secondary": "orange",
+      "textPrimary": "#000000",
+      "textSecondary": "#ffffff",
+      "disabledColor": "rgba(0, 0, 0, 0.25)"
+    }
+  },
+  "dark": {
+    "colors": {
+      "primary": "#ffffff",
+      "secondary": "#000000",
+      "textPrimary": "#ffffff",
+      "textSecondary": "#000000",
+      "disabledColor": "rgba(0, 0, 0, 0.25)"
+    }
+  }
+}
