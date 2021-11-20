@@ -1,13 +1,7 @@
 export interface NetworkIconProps {
-  network?:
-    | "polkadot"
-    | "kusama"
-    | "westend"
-    | "kulupu"
-    | "rococo"
-    | "substrate"
+  network?: "polkadot" | "kusama" | "westend" | "rococo"
   size: number
   active?: boolean
-  showName?: boolean
-  theme?: any
+  show?: "both" | "name" | "icon"
+  color?: string
 }

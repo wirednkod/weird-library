@@ -30,6 +30,10 @@ export const mergeTheme = (props: any) => mergeDeep(componentTheme, props.theme)
 export const isEmpty = (obj: object) =>
   obj && Object.keys(obj).length === 0 && obj.constructor === Object
 
-const isObject = (item: any) => {
+export const isObject = (item: any) => {
   return item && typeof item === "object" && !Array.isArray(item)
+}
+
+export const copyToClipboard = (text: string): void => {
+  navigator.clipboard.writeText(text)
 }

@@ -2,11 +2,11 @@
   "font-size-base": "14px",
   "light": {
     "colors": {
-      "primary": "blue",
+      "primary": "green",
       "secondary": "yellow",
       "textPrimary": "#000000",
       "textSecondary": "#ffffff",
-      "disabledColor": "rgba(0, 0, 0, 0.25)"
+      "disabledColor": "grey"
     }
   },
   "dark": {
@@ -15,7 +15,7 @@
       "secondary": "#000000",
       "textPrimary": "#ffffff",
       "textSecondary": "#000000",
-      "disabledColor": "rgba(0, 0, 0, 0.25)"
+      "disabledColor": "grey"
     }
   }
 }

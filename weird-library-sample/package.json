@@ -14,7 +14,7 @@
     "weird-library": "file:../dist"
   },
   "scripts": {
-    "dev": "rm -rf node_modules && yarn && npm link weird-library && yarn start",
+    "dev": "cd .. && yarn run build && cd - && rm -rf node_modules && yarn && yarn start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

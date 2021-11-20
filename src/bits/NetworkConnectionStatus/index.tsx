@@ -29,7 +29,6 @@ const SCircle = styled.div(
   ({ size, status, theme }: NetworkConnectionProps): any => {
     const sizePixels = getSize(size)
     const statusColor = getStatus(status, theme)
-    console.log("statusColor SCircle", statusColor)
     return {
       width: sizePixels,
       height: sizePixels,
@@ -43,7 +42,7 @@ const SCircleParachain = styled.div(
   ({ size, status, theme }: NetworkConnectionProps): any => {
     const sizePixels = getSize(size)
     const statusColor = getStatus(status, theme)
-    const borderSize = size === "small" ? "1.5" : size === "medium" ? "2" : "3"
+    const borderSize = size === "small" ? "1" : size === "medium" ? "2" : "3"
     return {
       width: parseFloat(sizePixels) / 3,
       height: (parseFloat(sizePixels) / 3) * 2,
@@ -53,7 +52,7 @@ const SCircleParachain = styled.div(
       background: "transparent",
       border: borderSize + "px solid " + statusColor,
       position: "relative",
-      borderLeft: "0px",
+      borderLeft: "0",
     }
   },
 )
@@ -66,7 +65,6 @@ export const NetworkConnectionStatus: FunctionComponent<NetworkConnectionProps> 
     theme,
   }: NetworkConnectionProps) => {
     const them = useTheme(theme)
-    console.log("Network Conn Status is", them)
     return (
       <div style={{ display: "flex" }}>
         <SCircle {...{ size, status }} theme={them.theme} />

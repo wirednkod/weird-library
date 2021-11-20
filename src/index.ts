@@ -1,5 +1,14 @@
 // weird Library
-import { Buttons, NetworkConnectionStatus, NetworkIcon, Tooltip } from "./bits"
+import {
+  Buttons,
+  Input,
+  NetworkConnectionStatus,
+  NetworkIcon,
+  Tooltip,
+} from "./bits"
+
+//Recipes
+import { AccountDisplay } from "./recipes"
 import { Dropdown } from "./components"
 
 // hooks
@@ -10,8 +19,10 @@ import { truncate, evalUnits, transformToBaseUnit } from "./helpers/utils"
 import sendNotification from "./helpers/notifications"
 
 export {
+  AccountDisplay,
   Dropdown,
   Buttons,
+  Input,
   NetworkConnectionStatus,
   NetworkIcon,
   Tooltip,

@@ -58,8 +58,7 @@
     "react-dom": ">= 16.8.0"
   },
   "dependencies": {
-    "cross-env": "^7.0.3",
-    "styled-components": "^4.4.1",
-    "web3-utils": "^1.5.2"
+    "@polkadot/react-identicon": "^0.86.5",
+    "styled-components": "^4.4.1"
   }
 }

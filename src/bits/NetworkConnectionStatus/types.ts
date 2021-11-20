@@ -2,7 +2,7 @@ export interface NetworkConnectionProps {
   size: SizeType
   status: StatusType
   type?: ChainType
-  theme: any
+  theme?: any
 }
 
 export type ChainType = "relay" | "para"

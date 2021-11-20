@@ -11,20 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <div style={{ margin: "100px 0 100px 40%" }}>
-    <Tooltip {...args}>
-      <div
-        style={{
-          width: "100px",
-          border: "1px solid red",
-          padding: "20px",
-          color: "red",
-          display: "block",
-          float: "left",
-        }}
-      >
-        Something
-      </div>
-    </Tooltip>
+    <Tooltip {...args}>Tooltip</Tooltip>
   </div>
 )
 

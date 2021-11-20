@@ -20,5 +20,5 @@ Default.args = {
   size: "130px",
   active: true,
   network: "polkadot",
-  showName: true,
+  show: "both",
 }
