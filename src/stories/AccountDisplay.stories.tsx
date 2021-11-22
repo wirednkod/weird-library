@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { AccountDisplay } from "../recipes/AccountDisplay"
+import { AccountDisplay } from "../pieces/AccountDisplay"
 
 export default {
-  title: "recipes/AccountDisplay",
+  title: "pieces/AccountDisplay",
   component: AccountDisplay,
   argTypes: {
     simple: {

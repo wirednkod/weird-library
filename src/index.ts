@@ -8,7 +8,7 @@ import {
 } from "./bits"
 
 //Recipes
-import { AccountDisplay } from "./recipes"
+import { AccountDisplay } from "./pieces"
 import { Dropdown } from "./components"
 
 // hooks
