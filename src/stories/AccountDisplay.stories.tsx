@@ -1,7 +1,7 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { AccountDisplay } from "../pieces/AccountDisplay"
+import { AccountDisplay } from "../recipes/AccountDisplay"
 
 export default {
   title: "pieces/AccountDisplay",
