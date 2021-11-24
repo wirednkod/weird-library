@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { mergeTheme, isEmpty } from "../../utils"
 
 import styled from "styled-components"
-import useClickedOutside from "../../hooks/useClickedOutside"
+import { useClickedOutside } from "../../hooks/useClickedOutside"
 
 import {
   DropdownItemProps,

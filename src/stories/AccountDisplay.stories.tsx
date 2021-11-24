@@ -2,6 +2,7 @@ import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
 import { AccountDisplay } from "../recipes/AccountDisplay"
+import { ApiPromise, WsProvider } from "@polkadot/api"
 
 export default {
   title: "pieces/AccountDisplay",
@@ -19,8 +20,9 @@ const Template: ComponentStory<typeof AccountDisplay> = (args) => (
 )
 
 export const Default = Template.bind({})
+
 Default.args = {
   iconType: "polkadot",
   size: 22,
-  address: "14ojxBcoCEacmKYoQopPE9vNo9nhWRAbX88bED7uJP6KKSxN",
+  address: "5DAAQmCA9oED818XFyfKow4td6Zyk8mjEAoTDTMk2GGPD7sq",
 }

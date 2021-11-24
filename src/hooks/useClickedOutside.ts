@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function useClickedOutside(ref: any) {
+export const useClickedOutside = (ref: any) => {
   const [clicked, setClicked] = useState(false)
   useEffect(() => {
     const handleClickOutside = (event: { target: any }) => {
@@ -14,5 +14,3 @@ function useClickedOutside(ref: any) {
 
   return clicked
 }
-
-export default useClickedOutside

@@ -1,3 +1,5 @@
+import { ApiPromise } from "@polkadot/api"
+
 export interface AccountDisplayProps {
   address: string
   size: number
@@ -7,4 +9,5 @@ export interface AccountDisplayProps {
   simple?: boolean
   network?: "polkadot" | "kusama" | "westend" | "rococo" | "any"
   showNetwork?: "icon" | "name" | "both"
+  api?: ApiPromise
 }

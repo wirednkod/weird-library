@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import defaultTheme from "../theme.json"
 
-function useTheme(provTheme?: any) {
+export const useTheme = (provTheme?: any) => {
   const [theme, setTheme] = useState<any>({})
   const [themeLoaded, setThemeLoaded] = useState<boolean>(false)
   useEffect(() => {

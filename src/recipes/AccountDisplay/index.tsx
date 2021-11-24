@@ -1,8 +1,10 @@
-import React from "react"
+import React from "react" //, { useEffect, useState }
 import { NetworkIcon } from "../.."
 import { NetworkIconProps } from "../../bits/NetworkIcon/types"
 import { AccountDisplayProps } from "./types"
 import { Identicon } from "@polkadot/react-identicon"
+import { ApiPromise } from "@polkadot/api"
+import { useBalance } from "../../hooks/useBalance"
 
 const NetworkDisplay = ({ network, show }: NetworkIconProps) => {
   let bColor: string = "transparent"
@@ -53,14 +55,22 @@ export const AccountDisplay = ({
   network = "any",
   showNetwork = "both",
   shortAmount = 6,
+  api,
 }: AccountDisplayProps) => {
-  let sa = shortAmount <= 0 || shortAmount > 23 ? 22 : shortAmount
-  let add: string =
+  const sa = shortAmount <= 0 || shortAmount > 23 ? 22 : shortAmount
+  const add: string =
     showAddress && showAddress === "short"
       ? address.slice(0, sa) +
         "..." +
         address.slice(address.length - sa, address.length)
       : address
+
+  const { chainTokens, formattedBalance } = useBalance(
+    api as ApiPromise,
+    address || "",
+    true,
+  )
+
   return (
     <div
       style={{
@@ -72,6 +82,7 @@ export const AccountDisplay = ({
         color: "#fff",
         position: "relative",
         overflow: "hidden",
+        width: "100%",
       }}
     >
       <div
@@ -83,7 +94,9 @@ export const AccountDisplay = ({
       >
         <Identicon value={address} size={size} theme={iconType} />
       </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div
+        style={{ display: "flex", flexDirection: "column", textAlign: "left" }}
+      >
         {!simple && (
           <div style={{ fontSize: "1rem", color: "#FFF" }}>Account name</div>
         )}
@@ -96,6 +109,16 @@ export const AccountDisplay = ({
         >
           {add}
         </div>
+      </div>
+      <div
+        style={{
+          display: api && chainTokens !== "-" ? "flex" : "none",
+          right: "1rem",
+          position: "absolute",
+          padding: "0 1rem 0 0",
+        }}
+      >
+        {formattedBalance}
       </div>
       {network !== "any" && (
         <NetworkDisplay size={size} network={network} show={showNetwork} />

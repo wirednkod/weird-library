@@ -4,14 +4,24 @@
   padding-top: 50px;
   min-height: 100vh;
 }
+.App-title {
+  color: #ccc;
+}
 
-.App-header {
+.App-area {
+  text-align: left;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.App-showcase {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   font-size: 20px;
   color: white;
+  margin: 20px 0;
 }
 
 .App-link {

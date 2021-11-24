@@ -1,3 +1,4 @@
+import React from "react"
 import { NetworkConnectionProps } from "../NetworkConnectionStatus/types"
 
 type PositionType =
@@ -16,7 +17,7 @@ type PositionType =
 
 export interface TooltipCompProps {
   children: any
-  title?: string
+  title?: string | React.ReactElement | undefined
   text: string
   placement: PositionType
   network?: NetworkConnectionProps
