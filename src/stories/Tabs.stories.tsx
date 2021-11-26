@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Tabs } from "../bits/Tabs"
+import { Tabs } from "../components/Tabs"
 
 export default {
-  title: "Bits/Tabs",
+  title: "components/Tabs",
   component: Tabs,
   argTypes: {},
 } as ComponentMeta<typeof Tabs>

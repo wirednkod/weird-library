@@ -1,7 +1,7 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Input } from "../bits/Input"
+import { Input } from "../components/Input"
 import styled from "styled-components"
 
 const InputComponentLeft = styled.div`
@@ -12,7 +12,7 @@ const InputComponentRight = styled.div`
 `
 
 export default {
-  title: "Bits/Input",
+  title: "components/Input",
   component: Input,
   argTypes: {
     disabled: {

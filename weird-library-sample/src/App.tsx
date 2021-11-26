@@ -90,12 +90,12 @@ function App() {
           <Area title="Network Connection" />
           <Showcase>
             <NetworkConnectionStatus
-              size="large"
+              size="small"
               type="relay"
               status="connected"
             />
             <NetworkConnectionStatus
-              size="large"
+              size="medium"
               type="relay"
               status="connecting"
             />
@@ -105,12 +105,12 @@ function App() {
               status="disconnected"
             />
             <NetworkConnectionStatus
-              size="large"
+              size="small"
               type="para"
               status="connected"
             />
             <NetworkConnectionStatus
-              size="large"
+              size="medium"
               type="para"
               status="connecting"
             />

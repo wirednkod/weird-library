@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Loader } from "../bits/Loader"
+import { Loader } from "../components/Loader"
 
 export default {
-  title: "Bits/Loader",
+  title: "components/Loader",
   component: Loader,
   argTypes: {},
 } as ComponentMeta<typeof Loader>

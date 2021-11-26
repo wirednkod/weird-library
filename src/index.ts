@@ -7,7 +7,7 @@ import {
   NetworkIcon,
   Tabs,
   Tooltip,
-} from "./bits"
+} from "./components"
 
 //Recipes
 import { AccountDisplay } from "./recipes"
@@ -34,7 +34,7 @@ export {
   AccountsTransfer,
   //recipes
   AccountDisplay,
-  // bits
+  // components
   Buttons,
   Input,
   Loader,

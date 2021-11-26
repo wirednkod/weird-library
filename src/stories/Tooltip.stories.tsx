@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Tooltip } from "../bits"
+import { Tooltip } from "../components"
 
 export default {
-  title: "Bits/Tooltip",
+  title: "components/Tooltip",
   component: Tooltip,
   argTypes: {},
 } as ComponentMeta<typeof Tooltip>

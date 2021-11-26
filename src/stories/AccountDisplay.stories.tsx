@@ -5,7 +5,7 @@ import { AccountDisplay } from "../recipes/AccountDisplay"
 import { ApiPromise, WsProvider } from "@polkadot/api"
 
 export default {
-  title: "pieces/AccountDisplay",
+  title: "recipes/AccountDisplay",
   component: AccountDisplay,
   argTypes: {
     simple: {

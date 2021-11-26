@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { Button } from "../bits/Buttons"
+import { Button } from "../components/Buttons"
 
 export default {
-  title: "Bits/Button",
+  title: "components/Button",
   component: Button,
   argTypes: {
     disabled: {

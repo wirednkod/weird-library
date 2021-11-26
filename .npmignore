@@ -9,3 +9,4 @@ tsconfig.*
 jest.config*
 
 src/**/*
+weird-library-sample

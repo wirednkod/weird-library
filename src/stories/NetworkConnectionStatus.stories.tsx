@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { NetworkConnectionStatus } from ".."
 
 export default {
-  title: "Bits/Network Connection Status",
+  title: "components/Network Connection Status",
   component: NetworkConnectionStatus,
   argTypes: {},
 } as ComponentMeta<typeof NetworkConnectionStatus>

@@ -1,6 +1,6 @@
 import React from "react" //, { useEffect, useState }
 import { NetworkIcon } from "../.."
-import { NetworkIconProps } from "../../bits/NetworkIcon/types"
+import { NetworkIconProps } from "../../components/NetworkIcon/types"
 import { AccountDisplayProps } from "./types"
 import { Identicon } from "@polkadot/react-identicon"
 import { ApiPromise } from "@polkadot/api"

@@ -157,7 +157,7 @@ export function Loader(props: LoadingDotsProps) {
               <div className="slidingWord">Carregando</div>
               <div className="slidingWord">加载中</div>
               <div className="slidingWord">טעינה</div>
-              <div className="stableWord">Carregando</div>
+              <div className="stableWord">Loading</div>
             </Words>
           </Sentence>
         </Wrapper>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { AccountsTransferProps } from "./types"
 import { AccountDisplay } from "../.."
-import { Input } from "../../bits"
+import { Input } from "../../components"
 import { BN } from "bn.js"
 import { Keyring } from "@polkadot/api"
-import { Button } from "../../bits/Buttons"
+import { Button } from "../../components/Buttons"
 
 const keyring = new Keyring({ type: "sr25519" })
 
