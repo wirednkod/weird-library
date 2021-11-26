@@ -1,6 +1,5 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Wallet } from "../icons/others/Wallet"
 
 import { Input } from "../bits/Input"
 import styled from "styled-components"
@@ -58,7 +57,7 @@ WithIcon.args = {
   placeholder: "Amount",
   component: (
     <InputComponentLeft>
-      <Wallet />
+      <div>Something</div>
     </InputComponentLeft>
   ),
 }
@@ -68,7 +67,7 @@ Large.args = {
   placeholder: "Search",
   component: (
     <InputComponentRight>
-      <Wallet />
+      <div>Something</div>
     </InputComponentRight>
   ),
   componentPosition: "right",
@@ -81,7 +80,7 @@ LargeActive.args = {
   value: "0x8885af4612de6d3cca48bd044bed4a2e49337b5240e5f436d951dbc59bdb0b75",
   component: (
     <InputComponentRight>
-      <Wallet />
+      <div>Something</div>
     </InputComponentRight>
   ),
   componentPosition: "right",
@@ -95,7 +94,7 @@ LargeError.args = {
   error: "Error Message",
   component: (
     <InputComponentRight>
-      <Wallet />
+      <div>Something</div>
     </InputComponentRight>
   ),
   componentPosition: "right",

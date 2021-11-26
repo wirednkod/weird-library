@@ -39,9 +39,9 @@ export const Button = styled.button<ButtonProps>`
 
 export const MenuButton = styled(Button)<MenuButtonProps>`
   width: 100%;
-  padding: 10px 42px;
+  padding: 10px 22px;
   height: ${(props) => props.height}px;
-  background-color: #000;
+  background-color: #ccc;
   align-items: center;
   display: flex;
   border: 0;

@@ -1,4 +1,4 @@
-import componentTheme from "./components/theme.json"
+import componentTheme from "./oldtheme.json"
 
 // Private
 const mergeDeep: any = (target: any, ...sources: any) => {

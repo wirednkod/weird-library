@@ -2,11 +2,11 @@
   "font-size-base": "14px",
   "light": {
     "colors": {
-      "primary": "pink",
+      "primary": "blue",
       "secondary": "orange",
       "textPrimary": "#000000",
       "textSecondary": "#ffffff",
-      "disabledColor": "rgba(0, 0, 0, 0.25)"
+      "disabledColor": "red"
     }
   },
   "dark": {

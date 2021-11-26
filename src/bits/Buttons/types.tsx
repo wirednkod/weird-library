@@ -1,6 +1,6 @@
 type ButtonType = "primary" | "secondary" | "simple"
 export interface ButtonProps {
-  onClick?: () => void
+  onClick?: (e: any) => void
   fontWeight?: number
   fontSize?: number
   fontFamily?: string

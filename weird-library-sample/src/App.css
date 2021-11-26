@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  padding-top: 50px;
   min-height: 100vh;
 }
 .App-title {
@@ -10,6 +9,7 @@
 
 .App-area {
   text-align: left;
+  margin: 20px 0 80px 20px;
   color: #999;
   text-transform: uppercase;
 }

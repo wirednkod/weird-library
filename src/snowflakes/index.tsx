@@ -1,3 +1,3 @@
-import { AccountWithBalance } from "./AccountWithBalance"
+import { AccountsTransfer } from "./AccountsTransfer"
 
-export { AccountWithBalance }
+export { AccountsTransfer }

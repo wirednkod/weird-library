@@ -28,24 +28,24 @@
     },
     "primary": {
       "color": "#28262C",
-      "background": "#E2665C",
-      "borderColor": "#E2665C",
+      "background": "#f1f500",
+      "borderColor": "#f1f500",
       "border": "0",
       "borderRadius": "0",
       "hoverColor": "#28262C",
-      "hoverbackground": "#D94F49",
-      "hoverBorderColor": "#D94F49",
+      "hoverbackground": "#855CFF",
+      "hoverBorderColor": "#855CFF",
       "disabledColor": "#28262C",
       "disabledBackground": "#404040",
       "disabledBorderColor": "#404040"
     },
     "secondary": {
-      "color": "#E2665C",
+      "color": "#f1f500",
       "background": "rgba(226, 102, 92, 0.2)",
       "borderColor": "rgba(226, 102, 92, 0.2)",
       "border": "0",
       "borderRadius": "0",
-      "hoverColor": "#E2665C",
+      "hoverColor": "#f1f500",
       "hoverbackground": "rgba(226, 102, 92, 0.6)",
       "hoverBorderColor": "rgba(226, 102, 92, 0.6)",
       "disabledColor": "#28262C",
@@ -53,7 +53,7 @@
       "disabledBorderColor": "#404040"
     },
     "simple": {
-      "color": "#E2665C",
+      "color": "#f1f500",
       "background": "transparent",
       "borderColor": "transparent",
       "border": "0",
@@ -67,7 +67,7 @@
     }
   },
   "loader": {
-    "background": "#E2665C",
+    "background": "#f1f500",
     "dotSize": "5px",
     "loadingText": {
       "fontFamily": "'Poppins', sans-serif",
@@ -78,13 +78,13 @@
   "slider": {
     "background": "rgba(226, 102, 92, 0.2)",
     "disabledBackground": "rgba(255,255,255,.15)",
-    "selectedBackground": "#E2665C",
-    "thumbHover": "#D94F49",
+    "selectedBackground": "#f1f500",
+    "thumbHover": "#855CFF",
     "tickerBackground": "#1E1E1E"
   },
   "selector": {
     "background": "#28262C",
-    "selectedBackground": "#E2665C",
+    "selectedBackground": "#f1f500",
     "hoverBackground": "#312F35",
     "color": "#FFFFFF",
     "horizontalPadding": "12px",
@@ -118,7 +118,7 @@
     },
     "error": {
       "background": "#432827",
-      "color": "#D94F49"
+      "color": "#855CFF"
     },
     "warning": {
       "background": "#403524",
@@ -143,7 +143,7 @@
     "fontSizeLarge": "24px",
     "fontSizeSmall": "12px",
     "disabledColor": "rgba(255, 255, 255, 0.15)",
-    "errorColor": "#E2665C"
+    "errorColor": "red"
   },
   "badge": {
     "fontSize": "12px",
@@ -179,7 +179,7 @@
   "tabs": {
     "padding": "16",
     "color": "#838383",
-    "activeColor": "#E2665C",
+    "activeColor": "#f1f500",
     "borderColor": "rgba(255, 255, 255, 0.15)",
     "borderSize": "1",
     "justifyContent": "initial"

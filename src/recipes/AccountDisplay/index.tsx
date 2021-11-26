@@ -116,6 +116,7 @@ export const AccountDisplay = ({
           right: "1rem",
           position: "absolute",
           padding: "0 1rem 0 0",
+          fontSize: "0.9rem",
         }}
       >
         {formattedBalance}

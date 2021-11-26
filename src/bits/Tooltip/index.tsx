@@ -34,7 +34,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
         break
       case "left":
         where = "top: 40%;"
-        bubblePush = "top: -10%;"
+        bubblePush = "top: -20%;"
         bubblePosition = "right: 110%;"
         beforeOrAfter = "after"
         arrowPositonColors =
@@ -79,7 +79,7 @@ const ToolTipText = styled.span<TooltipTextProps>`
         break
       case "right":
         where = "top: 40%;"
-        bubblePush = "top: -10%;"
+        bubblePush = "top: -20%;"
         bubblePosition = "right: -165%;"
         beforeOrAfter = "after"
         arrowPositonColors =

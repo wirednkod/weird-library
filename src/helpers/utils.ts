@@ -1,4 +1,6 @@
 import { BN } from "bn.js"
+import { decodeAddress, encodeAddress } from "@polkadot/keyring"
+import { hexToU8a, isHex } from "@polkadot/util"
 
 export const truncate = (
   fullStr: string,
@@ -141,4 +143,16 @@ export const transformToBaseUnit = (
 
 export const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+export const isValidSubstateAddress = (address: string): boolean => {
+  try {
+    encodeAddress(
+      isHex(address) ? hexToU8a(address.toString()) : decodeAddress(address),
+    )
+    return true
+  } catch (error) {
+    console.log(error)
+    return false
+  }
 }
